@@ -34,8 +34,10 @@ function renderTimeline(target, items) {
     .map(
       (e) => `<li>
         <span class="when">${e.when}</span>
-        <span class="what">${e.what}</span>
-        <div class="where">${e.where}</div>
+        <div class="entry">
+          <span class="what">${e.what}</span>
+          <div class="where">${e.where}</div>
+        </div>
       </li>`
     )
     .join("");
@@ -66,7 +68,7 @@ function headerHTML(lang) {
     </nav>
     <div class="header-actions">
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">${lang === "zh" ? "EN" : "中文"}</button>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu">Menu</button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false">Menu</button>
     </div>`;
 }
 
@@ -78,7 +80,10 @@ function bindChrome() {
   const nav = document.getElementById("nav");
   const menu = document.getElementById("menuToggle");
   if (menu && nav) {
-    menu.addEventListener("click", () => nav.classList.toggle("open"));
+    menu.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      menu.setAttribute("aria-expanded", open ? "true" : "false");
+    });
   }
 }
 
@@ -137,6 +142,10 @@ function renderResearch(lang) {
            .map((c) => `<a href="${c.href}" target="_blank" rel="noopener">${c.label}</a>`)
            .join("")}</p>`;
   const story = d.story ? `<p class="story">${d.story[lang]}</p>` : "";
+  const others = DIRECTIONS.filter((x) => x.id !== d.id)
+    .map((x) => `<a href="${asset(x.page)}">${x.title[lang]}</a>`)
+    .concat(`<a href="${asset("papers.html")}">${dict["nav.papers"]}</a>`)
+    .join("");
   article.innerHTML = `
     <p class="page-kicker">${dict["research.title"]}</p>
     <h1>${d.title[lang]}</h1>
@@ -148,7 +157,9 @@ function renderResearch(lang) {
     <ul class="work-list">${works}</ul>
     <h2>${dict["research.figures"]}</h2>
     <div class="fig-stack">${figs}</div>
-    ${code}`;
+    ${code}
+    <h2>${dict["research.more"]}</h2>
+    <p class="more-dirs">${others}</p>`;
 }
 
 function applyLang(lang) {
