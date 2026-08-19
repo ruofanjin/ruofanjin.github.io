@@ -116,50 +116,70 @@ function renderResearch(lang) {
   const dict = I18N[lang];
   const d = DIRECTIONS.find((x) => x.id === PAGE);
   if (!d) return;
-  const works = d.works
-    .map((w) => {
-      const name = w.href
-        ? `<a href="${w.href}" target="_blank" rel="noopener">${w.name}</a>`
-        : w.name;
-      return `<li>${name}<span> · ${w.note[lang]}</span></li>`;
+
+  const refNumber = new Map((d.refs || []).map((r, i) => [r.key, i + 1]));
+  const cite = (text) =>
+    text.replace(/\{\{(\w+)\}\}/g, (whole, key) => {
+      const n = refNumber.get(key);
+      return n ? `<sup class="cite"><a href="#ref-${key}">${n}</a></sup>` : "";
+    });
+
+  const figure = (f) => {
+    const cap = f.caption[lang];
+    const img = `<img src="${asset(f.src)}" alt="${cap}" loading="lazy" />`;
+    const linked = f.href
+      ? `<a href="${f.href}" target="_blank" rel="noopener">${img}</a>`
+      : img;
+    const width = f.w ? ` style="width:${f.w}px"` : "";
+    return `<figure class="fig fig-${f.side || "right"}"${width}>${linked}<figcaption>${cap}</figcaption></figure>`;
+  };
+
+  const sections = (d.sections || [])
+    .map((s) => {
+      const floats = (s.figures || []).filter((f) => f.side !== "wide");
+      const figs = floats.map(figure).join("");
+      const wide = (s.figures || []).filter((f) => f.side === "wide").map(figure).join("");
+      const paras = s.paras.map((p) => `<p>${cite(p[lang])}</p>`).join("");
+      const cls = floats.length ? "rs has-float" : "rs";
+      return `<section class="${cls}"><h2>${s.h[lang]}</h2>${figs}${paras}${wide}</section>`;
     })
     .join("");
-  const figs = (d.figures || [])
-    .map((f) => {
-      const cap = f.caption[lang];
-      const img = `<img src="${asset(f.src)}" alt="${cap}" loading="lazy" />`;
-      const linked = f.href
-        ? `<a href="${f.href}" target="_blank" rel="noopener">${img}</a>`
-        : img;
-      return `<figure>${linked}<figcaption>${cap}</figcaption></figure>`;
-    })
-    .join("");
+
   const code =
-    d.code.length === 0
+    !d.code || d.code.length === 0
       ? ""
-      : `<h2>${dict["research.code"]}</h2>
+      : `<section class="rs"><h2>${dict["research.code"]}</h2>
          <p class="code-links">${d.code
            .map((c) => `<a href="${c.href}" target="_blank" rel="noopener">${c.label}</a>`)
-           .join("")}</p>`;
-  const story = d.story ? `<p class="story">${d.story[lang]}</p>` : "";
+           .join("")}</p></section>`;
+
+  const refs =
+    !d.refs || d.refs.length === 0
+      ? ""
+      : `<section class="rs"><h2>${dict["research.refs"]}</h2>
+         <ol class="refs">${d.refs
+           .map((r) => {
+             const body = r.href
+               ? `<a href="${r.href}" target="_blank" rel="noopener">${r.text}</a>`
+               : `<span>${r.text}</span>`;
+             return `<li id="ref-${r.key}" class="${r.mine ? "is-mine" : ""}">${body}</li>`;
+           })
+           .join("")}</ol></section>`;
+
   const others = DIRECTIONS.filter((x) => x.id !== d.id)
     .map((x) => `<a href="${asset(x.page)}">${x.title[lang]}</a>`)
     .concat(`<a href="${asset("papers.html")}">${dict["nav.papers"]}</a>`)
     .join("");
+
   article.innerHTML = `
     <p class="page-kicker">${dict["research.title"]}</p>
     <h1>${d.title[lang]}</h1>
     <p class="lede">${d.body[lang]}</p>
-    <h2>${dict["research.contrib"]}</h2>
-    <p>${d.contrib[lang]}</p>
-    ${story}
-    <h2>${dict["research.works"]}</h2>
-    <ul class="work-list">${works}</ul>
-    <h2>${dict["research.figures"]}</h2>
-    <div class="fig-stack">${figs}</div>
+    ${sections}
     ${code}
-    <h2>${dict["research.more"]}</h2>
-    <p class="more-dirs">${others}</p>`;
+    ${refs}
+    <section class="rs"><h2>${dict["research.more"]}</h2>
+    <p class="more-dirs">${others}</p></section>`;
 }
 
 function applyLang(lang) {

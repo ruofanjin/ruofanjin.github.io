@@ -14,13 +14,10 @@ const I18N = {
     "hero.lead":
       "I work on biomolecular design for targeted immune regulation; scientific foundation models and scientific agents; and scientific AI safety.",
     "research.title": "Research",
-    "research.sub": "Three directions. Each has its own page.",
     "research.open": "Open page",
     "research.all": "All papers",
-    "research.contrib": "My role",
-    "research.works": "Papers and links",
-    "research.figures": "Figures",
     "research.code": "Code & tools",
+    "research.refs": "References",
     "research.more": "Keep reading",
     "pub.title": "Papers",
     "pub.sub": "Equal contribution is marked with *. Preprints link to arXiv or bioRxiv. Published papers are ordered by first-author role, then Google Scholar citations.",
@@ -49,13 +46,10 @@ const I18N = {
     "hero.lead":
       "我关注靶向免疫调控的生物大分子设计、科学基础大模型与科学智能体，以及科学智能安全。",
     "research.title": "研究",
-    "research.sub": "三个方向，各自独立成页。",
     "research.open": "进入页面",
     "research.all": "全部论文",
-    "research.contrib": "我的贡献",
-    "research.works": "论文与链接",
-    "research.figures": "示意图",
     "research.code": "代码与工具",
+    "research.refs": "参考文献",
     "research.more": "继续浏览",
     "pub.title": "论文",
     "pub.sub": "共同一作以 * 标注。预印本链接至 arXiv 或 bioRxiv。已发表论文按独立一作、共同一作、其他作者排序，同组内按 Google Scholar 引用从高到低。",
@@ -84,56 +78,158 @@ const DIRECTIONS = [
       en: "Antibodies, antigen presentation and screening, and RNA aptamers.",
       zh: "抗体、抗原呈递与筛选、RNA 适配体。",
     },
-    contrib: {
-      en: "Sole first author on AttABseq (sequence-based antigen–antibody affinity) and MultiTAP (TCR–peptide–HLA immunogenicity). RNA aptamer design is part of RNAGenesis, where I am co-first author.",
-      zh: "AttABseq 独立一作（基于序列的抗原–抗体亲和力）。MultiTAP 独立一作（TCR–肽–HLA 免疫原性）。RNA 适配体设计见于 RNAGenesis，我为共同一作。",
-    },
-    story: {
-      en: "MultiTAP encodes paired TCR CDR3αβ, peptide and full-length HLA sequences with ESM-2 and a TCR masked language model, builds residue-level graphs on Boltz2-predicted pHLA structures, and fuses the two views with bidirectional sequence–structure cross-attention. On independent tests it leads seven baselines (AUC 0.890, AUPR 0.723). The figures below come from the updated manuscript, not the 2024 preprint.",
-      zh: "MultiTAP 用 ESM-2 与 TCR 掩码语言模型编码配对 CDR3αβ、肽段与 HLA 全长序列，在 Boltz2 预测的 pHLA 结构上构建残基级图，再以序列–结构双向交叉注意力融合两种视角。独立测试中在七个基线里全面领先（AUC 0.890，AUPR 0.723）。下方配图来自更新后的稿件，而非 2024 年的预印本。",
-    },
-    works: [
+    sections: [
       {
-        name: "AttABseq",
-        href: "https://doi.org/10.1093/bib/bbae304",
-        note: { en: "Briefings in Bioinformatics · sole first author", zh: "Briefings in Bioinformatics · 独立一作" },
+        h: { en: "Background", zh: "背景" },
+        figures: [
+          {
+            src: "photos/research/crops/immune-tcell.jpg",
+            side: "right",
+            caption: {
+              en: "The recognition event that decides immunogenicity: a T cell receptor reading a peptide presented by an HLA molecule.",
+              zh: "决定免疫原性的那一次识别：T 细胞受体读取 HLA 呈递的肽段。",
+            },
+          },
+        ],
+        paras: [
+          {
+            en: "Whether an immunotherapy works often comes down to a single molecular recognition event. Can a T cell receptor read the short peptide an HLA molecule presents? Does an antibody bind its epitope tightly enough? For two decades the honest way to answer such questions was experimental selection — SELEX for nucleic acid ligands{{tuerk}}{{ellington}}, phage and yeast display for antibodies. Selection is reliable, but a round takes months and covers a vanishingly small corner of sequence space.",
+            zh: "免疫治疗的成败，常常取决于一次分子层面的识别：T 细胞受体能否认出 HLA 呈递的那一小段肽，抗体能否以足够高的亲和力结合表位。过去二十年，回答这类问题最可靠的方式是实验筛选——核酸配体靠 SELEX{{tuerk}}{{ellington}}，抗体靠噬菌体与酵母展示。筛选可信，但一轮动辄数月，而且只能覆盖序列空间中极小的一角。",
+          },
+          {
+            en: "Structure prediction{{af2}} and protein language models{{esm2}} changed the priors available to this field, and peptide–HLA binding prediction has become routine{{netmhcpan}}. The step that actually determines immunogenicity — TCR recognition of the peptide–HLA complex — remains hard. Paired α/β chain data are scarce{{nettcr}}, the same peptide is recognised by receptors with little sequence similarity{{tcrdist}}, and solved TCR–pHLA complexes are rarer still. Most of my work in this direction is an attempt to work around those two constraints: too little data, and almost no structure.",
+            zh: "结构预测{{af2}}与蛋白质语言模型{{esm2}}改变了这个领域可用的先验，肽–HLA 结合预测也已相当成熟{{netmhcpan}}。但真正决定免疫原性的一步——TCR 对肽–HLA 复合物的识别——依然困难：配对的 α/β 链数据稀少{{nettcr}}，同一段肽可以被序列相差很远的受体识别{{tcrdist}}，而解析出的 TCR–pHLA 复合物结构更少。我在这个方向上的工作，多半是在绕开这两个约束：数据太少，结构几乎没有。",
+          },
+        ],
       },
       {
-        name: "MultiTAP",
-        href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193v1",
-        note: { en: "bioRxiv preprint · sole first author; figures below are the updated manuscript", zh: "bioRxiv 预印本 · 独立一作；下方配图为更新后的稿件" },
+        h: { en: "MultiTAP: putting structure back into TCR recognition", zh: "MultiTAP：把结构先验补回 TCR 识别" },
+        figures: [
+          {
+            src: "photos/research/crops/immune-boltz.jpg",
+            side: "left",
+            caption: {
+              en: "Every peptide–HLA pair in the dataset is folded with Boltz-2, turning a data problem into a structure-augmented one.",
+              zh: "数据集中的每一对肽–HLA 都用 Boltz-2 折叠，把数据问题转成有结构可用的问题。",
+            },
+          },
+          {
+            src: "photos/research/crops/immune-ablation.jpg",
+            side: "wide",
+            caption: {
+              en: "Ablation across five metrics. Adding the α chain, the full HLA sequence and the predicted structure each contributes; the structural view gives the last and most consistent gain.",
+              zh: "五项指标上的消融。补上 α 链、HLA 全长与预测结构各有贡献，其中结构视角带来最后也最稳定的一段增益。",
+            },
+          },
+        ],
+        paras: [
+          {
+            en: "MultiTAP{{multitap}} starts from a simple move: if experimental TCR–pHLA complexes are too few, predict them. Every peptide–HLA pair in the training set is folded with Boltz-2{{boltz2}} and encoded as a residue-level graph, while ESM-2 and a TCR masked language model embed the paired CDR3αβ, the peptide and the full-length HLA sequence. Sequence and structure representations then attend to each other in both directions, and a gate decides how much each view is worth for a given example.",
+            zh: "MultiTAP{{multitap}} 的出发点很直接：既然实验解析的 TCR–pHLA 复合物太少，那就把它预测出来。训练集中每一对肽–HLA 都用 Boltz-2{{boltz2}} 折叠并编码成残基级的图，同时用 ESM-2 与一个 TCR 掩码语言模型编码配对的 CDR3αβ、肽段与 HLA 全长序列。序列表征与结构表征之间做双向交叉注意力，再由一个门控单元决定：对当前这条样本，两种视角各值多少。",
+          },
+          {
+            en: "On held-out tests MultiTAP leads seven baselines across the board (AUC 0.890, AUPR 0.723). The ablation matters more to me than the headline number: with only CDR3β and the peptide the model sits near AUC 0.84, and each added view — the α chain, the full HLA sequence, the predicted structure — moves it up. Predicted structures are not as good as crystal structures, but they are good enough to carry real signal about which contacts a receptor can actually make.",
+            zh: "在独立测试集上，MultiTAP 相对七个基线方法全面领先（AUC 0.890，AUPR 0.723）。比这个数字更值得说的是消融：只用 CDR3β 与肽段时，模型停在 AUC 0.84 附近；每补上一个视角——α 链、HLA 全长、预测结构——都会往上走一段。预测结构当然比不上晶体结构，但已经足够携带真实的信息：受体到底能形成哪些接触。",
+          },
+        ],
       },
       {
-        name: "RNAGenesis (RNA aptamers)",
-        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
-        note: { en: "bioRxiv · co-first, second listed", zh: "bioRxiv · 共同一作，排名第二" },
-      },
-    ],
-    figures: [
-      {
-        src: "photos/research/multitap.jpg",
-        caption: {
-          en: "MultiTAP framework: ESM-2 and TCR MLM embeddings, graph encoding of Boltz2 pHLA structures, and bidirectional sequence/structure cross-attention.",
-          zh: "MultiTAP 框架：ESM-2 与 TCR 掩码语言模型嵌入、Boltz2 预测的 pHLA 结构图编码，以及序列/结构双向交叉注意力。",
-        },
+        h: { en: "AttABseq: affinity changes without a structure", zh: "AttABseq：没有结构时的亲和力预测" },
+        paras: [
+          {
+            en: "Antibody engineering asks the same question thousands of times: will this mutation help or hurt? Structure-based free energy methods answer it well when a complex structure exists, which for most engineering candidates it does not. AttABseq{{attabseq}} takes only sequences — an end-to-end attention network over the antigen–antibody pair — and regresses the change in binding free energy directly. Across antigen–antibody mutation benchmarks it correlates better with experiment than contemporary sequence-based methods, which makes large virtual screens possible before any structure is available. I also surveyed how deep learning is reshaping antibody optimisation more broadly{{abreview}}.",
+            zh: "抗体工程反复面对同一个问题：这个突变会让亲和力变好还是变差。基于结构的自由能方法回答得不错，前提是有复合物结构——而工程中的绝大多数候选并没有。AttABseq{{attabseq}} 只用序列：以端到端的注意力网络编码抗原–抗体序列对，直接回归结合自由能的变化。在多个抗原–抗体突变基准上，它与实验值的相关性优于同期的序列方法，使得在拿到结构之前就能做大规模虚拟筛选。围绕深度学习如何改变抗体优化，我也写过一篇综述{{abreview}}。",
+          },
+        ],
       },
       {
-        src: "photos/research/multitap-ablation.jpg",
-        caption: {
-          en: "TPHD construction, Boltz2 pHLA structures, and ablation. Full MultiTAP (sequence + structure) leads on AUC, AUPR, Precision, F1, and MCC.",
-          zh: "TPHD 数据集、Boltz2 pHLA 结构，以及消融实验。完整 MultiTAP（序列+结构）在 AUC、AUPR、Precision、F1、MCC 上均为最高。",
-        },
-      },
-      {
-        src: "photos/research/rnagenesis.jpg",
-        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
-        caption: {
-          en: "RNAGenesis includes de novo RNA aptamer design alongside other functional RNAs.",
-          zh: "RNAGenesis 支持 RNA 适配体等功能性 RNA 的从头设计。",
-        },
+        h: { en: "RNA aptamers: from selection to generation", zh: "RNA 适配体：从筛选到生成" },
+        figures: [
+          {
+            src: "photos/research/crops/immune-aptamer.jpg",
+            side: "right",
+            w: 230,
+            caption: {
+              en: "Aptamer and gRNA scaffold design as generation tasks inside RNAGenesis.",
+              zh: "在 RNAGenesis 中，适配体与 gRNA 支架设计被当作生成任务。",
+            },
+          },
+        ],
+        paras: [
+          {
+            en: "Aptamers are short nucleic acids that fold into a shape and bind a target — chemical antibodies, in the usual phrase. Classical SELEX enriches them from a random library, so the outcome is bounded by what the library happened to contain. In RNAGenesis{{rnagenesis}} we treat it as a generation problem instead: learn the distribution of natural RNA with a foundation model, run diffusion in its latent space, and steer sampling with a reward model toward aptamers and functional RNA scaffolds that the library never had. Selection then becomes verification rather than search.",
+            zh: "适配体是能折叠成特定形状并结合靶点的短核酸，常被称作化学抗体。经典 SELEX 从随机文库中富集，结果因此被文库里恰好有什么所限定。在 RNAGenesis{{rnagenesis}} 中，我们把它换成生成问题：先用基础模型学习自然 RNA 的分布，再在其潜空间做扩散，并用奖励模型把采样引向文库里原本不存在的适配体与功能性 RNA 支架。这样一来，筛选的角色从搜索变成了验证。",
+          },
+        ],
       },
     ],
     code: [],
+    refs: [
+      {
+        key: "tuerk",
+        text: "C. Tuerk, L. Gold. Systematic evolution of ligands by exponential enrichment: RNA ligands to bacteriophage T4 DNA polymerase. <i>Science</i>, 1990.",
+        href: "https://doi.org/10.1126/science.2200121",
+      },
+      {
+        key: "ellington",
+        text: "A. D. Ellington, J. W. Szostak. In vitro selection of RNA molecules that bind specific ligands. <i>Nature</i>, 1990.",
+        href: "https://doi.org/10.1038/346818a0",
+      },
+      {
+        key: "af2",
+        text: "J. Jumper, R. Evans, A. Pritzel, et al. Highly accurate protein structure prediction with AlphaFold. <i>Nature</i>, 2021.",
+        href: "https://doi.org/10.1038/s41586-021-03819-2",
+      },
+      {
+        key: "esm2",
+        text: "Z. Lin, H. Akin, R. Rao, et al. Evolutionary-scale prediction of atomic-level protein structure with a language model. <i>Science</i>, 2023.",
+        href: "https://doi.org/10.1126/science.ade2574",
+      },
+      {
+        key: "netmhcpan",
+        text: "B. Reynisson, B. Alvarez, S. Paul, et al. NetMHCpan-4.1 and NetMHCIIpan-4.0: improved predictions of MHC antigen presentation. <i>Nucleic Acids Research</i>, 2020.",
+        href: "https://doi.org/10.1093/nar/gkaa379",
+      },
+      {
+        key: "nettcr",
+        text: "A. Montemurro, V. Schuster, H. R. Povlsen, et al. NetTCR-2.0 enables accurate prediction of TCR–peptide binding by using paired TCRα and β sequence data. <i>Communications Biology</i>, 2021.",
+        href: "https://doi.org/10.1038/s42003-021-02610-3",
+      },
+      {
+        key: "tcrdist",
+        text: "P. Dash, A. J. Fiore-Gartland, T. Hertz, et al. Quantifiable predictive features define epitope-specific T cell receptor repertoires. <i>Nature</i>, 2017.",
+        href: "https://doi.org/10.1038/nature22383",
+      },
+      {
+        key: "multitap",
+        mine: true,
+        text: "<b>R. Jin</b>, J. Ge, G. Zhang, Z. Deng, K. Hsieh, T. Hou, R. Zhou. A multi-modal deep learning framework with both sequence and structure for tumor antigen prediction. <i>bioRxiv</i>, 2024.",
+        href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193v1",
+      },
+      {
+        key: "boltz2",
+        text: "S. Passaro, G. Corso, J. Wohlwend, et al. Boltz-2: towards accurate and efficient binding affinity prediction. <i>bioRxiv</i>, 2025.",
+        href: "https://doi.org/10.1101/2025.06.14.659707",
+      },
+      {
+        key: "attabseq",
+        mine: true,
+        text: "<b>R. Jin</b>, Q. Ye, J. Wang, et al., C.-Y. Hsieh, T. Hou. AttABseq: an attention-based deep learning prediction method for antigen–antibody binding affinity changes based on protein sequences. <i>Briefings in Bioinformatics</i>, 2024.",
+        href: "https://doi.org/10.1093/bib/bbae304",
+      },
+      {
+        key: "abreview",
+        mine: true,
+        text: "<b>R. Jin</b>, R. Zhou, D. Zhang. Recent advances in antibody optimization based on deep learning methods. <i>Journal of Zhejiang University-SCIENCE B</i>, 2025.",
+        href: "https://doi.org/10.1631/jzus.B2400387",
+      },
+      {
+        key: "rnagenesis",
+        mine: true,
+        text: "Z. Zhang, <b>R. Jin</b>, L. Chao, et al. RNAGenesis: a generalist foundation model for functional RNA therapeutics. <i>bioRxiv</i>, 2024.",
+        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
+      },
+    ],
   },
   {
     id: "models-agents",
@@ -147,61 +243,150 @@ const DIRECTIONS = [
       en: "RNAGenesis, BioLab, and STELLA.",
       zh: "RNAGenesis、BioLab 与 STELLA。",
     },
-    contrib: {
-      en: "Co-first author on RNAGenesis. Lead co-first author on BioLab. Sole first author on STELLA.",
-      zh: "RNAGenesis 共同一作。BioLab 共同一作（排名第一）。STELLA 独立一作。",
-    },
-    story: {
-      en: "RNAGenesis is a generalist RNA foundation model. BioLab is a multi-agent system that calls biological foundation models and tools. STELLA is a self-evolving LLM agent for biomedical research.",
-      zh: "RNAGenesis 是通用 RNA 基础模型。BioLab 是调用生物基础模型与工具的多智能体系统。STELLA 是面向生物医学研究的自进化智能体。",
-    },
-    works: [
+    sections: [
       {
-        name: "RNAGenesis",
-        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
-        note: { en: "bioRxiv · co-first, second listed", zh: "bioRxiv · 共同一作，排名第二" },
+        h: { en: "Background", zh: "背景" },
+        paras: [
+          {
+            en: "Biology is layered — DNA, RNA, protein, cell, literature — and each layer now has its own foundation model: ESM-2 for proteins{{esm2}}, Evo at genome scale{{evo}}, RNA-FM and its successors for RNA{{rnafm}}. Representation keeps improving. But a real project is never one representation: you read papers, find data, pick a model, write code, look at the result, and decide what to do next.",
+            zh: "生命科学的数据是分层的——DNA、RNA、蛋白质、细胞、文献——如今每一层都有了自己的基础模型：蛋白质有 ESM-2{{esm2}}，基因组尺度有 Evo{{evo}}，RNA 也有 RNA-FM 及其后继{{rnafm}}。表征这一步在稳步变好。但真实的课题从来不只需要一次表征：要读文献、找数据、选模型、写代码、看结果，再决定下一步做什么。",
+          },
+          {
+            en: "That gap is what agents are for. Coscientist runs autonomous chemistry{{coscientist}}, ChemCrow wires chemistry tools into a language model{{chemcrow}}, and the AI Scientist tries to close the loop all the way to a manuscript{{aiscientist}}. My interest sits where the two lines cross. An agent that can only call generic tools never reaches the part of biology that is actually hard; it becomes useful when it can call biological foundation models, so that prediction is a step inside its reasoning rather than an attachment to it.",
+            zh: "智能体要补的正是这段落差。Coscientist 能自主完成化学实验{{coscientist}}，ChemCrow 把化学工具接入语言模型{{chemcrow}}，AI Scientist 则试图一路闭环到论文{{aiscientist}}。我关心的是这两条线索的交点：只会调用通用工具的智能体，永远碰不到生物学真正困难的那部分；只有当它能调用生物基础模型，预测才会成为推理链条中的一步，而不是挂在外面的附件。",
+          },
+        ],
       },
       {
-        name: "BioLab",
-        href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085v1",
-        note: { en: "bioRxiv · co-first, first listed", zh: "bioRxiv · 共同一作，排名第一" },
+        h: { en: "RNAGenesis: understanding and generating RNA", zh: "RNAGenesis：理解 RNA，也生成 RNA" },
+        figures: [
+          {
+            src: "photos/research/crops/models-radar.jpg",
+            side: "right",
+            caption: {
+              en: "Downstream performance across RNA structure, function and engineering tasks.",
+              zh: "在 RNA 结构、功能与工程三类下游任务上的表现。",
+            },
+          },
+          {
+            src: "photos/research/crops/models-wetlab.jpg",
+            side: "wide",
+            caption: {
+              en: "From 25K generated sequences to 24 novel scaffolds tested in CRISPR-Cas9, prime editing and base editing.",
+              zh: "从 2.5 万条生成序列筛到 24 条全新支架，并在 CRISPR-Cas9、先导编辑与碱基编辑中实测。",
+            },
+          },
+        ],
+        paras: [
+          {
+            en: "RNA is both message and machine, yet its representation learning lagged behind proteins for years. RNAGenesis{{rnagenesis}} pre-trains on RNAcentral-scale data with a hybrid design: nucleotide-level encoding, then a query transformer that compresses a sequence into a small set of latent tokens, so the same model can understand and generate. Across more than a dozen downstream tasks spanning structure, function and engineering it is state of the art or comparable on most.",
+            zh: "RNA 既是信息载体，也是功能分子，可它的表征学习长期落后于蛋白质。RNAGenesis{{rnagenesis}} 在 RNAcentral 量级的数据上做预训练，用的是混合架构：先做核苷酸级编码，再用 Query Transformer 把序列压成一小组潜表示，于是同一个模型既能理解也能生成。在涵盖结构、功能与工程的十余项下游任务上，它在多数任务上达到或接近当前最好水平。",
+          },
+          {
+            en: "Generation happens in that latent space: diffusion, steered by a reward model through gradient guidance and beam search. Candidates pass through sequence and secondary-structure filters, a cleavage classifier and AlphaFold3 co-folding{{af3}} before anything is ordered. The survivors were tested in the lab, where generated gRNA scaffolds — sequences with no natural counterpart — worked in CRISPR-Cas9, prime editing and base editing, several of them on par with scaffolds that nature and years of engineering had already optimised.",
+            zh: "生成发生在这组潜表示上：做扩散，并用奖励模型以梯度引导与束搜索的方式调控采样。候选序列要依次通过序列与二级结构相似性过滤、切割效率分类器，以及 AlphaFold3 共折叠{{af3}}，才会被真正合成。留下来的进了湿实验：生成的全新 gRNA 支架在 CRISPR-Cas9、先导编辑与碱基编辑中都能工作，其中若干条与经过自然演化和多年工程优化的支架相当。",
+          },
+        ],
       },
       {
-        name: "STELLA",
-        href: "https://arxiv.org/abs/2507.02004",
-        note: { en: "arXiv:2507.02004 · sole first author", zh: "arXiv:2507.02004 · 独立一作" },
-      },
-    ],
-    figures: [
-      {
-        src: "photos/research/rnagenesis.jpg",
-        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
-        caption: {
-          en: "RNAGenesis: a generalist RNA foundation model.",
-          zh: "RNAGenesis：通用 RNA 基础模型。",
-        },
-      },
-      {
-        src: "photos/research/biolab.jpg",
-        href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085v1",
-        caption: {
-          en: "BioLab: multi-agent system with biological foundation models.",
-          zh: "BioLab：融合生物基础模型的多智能体系统。",
-        },
+        h: { en: "BioLab: agents that can call biological models", zh: "BioLab：能调用生物模型的智能体" },
+        figures: [
+          {
+            src: "photos/research/crops/models-agents.jpg",
+            side: "left",
+            w: 300,
+            caption: {
+              en: "Planner, Code, Reasoner, Critic and Report agents, with a memory agent that carries experience between tasks.",
+              zh: "规划、代码、推理、评审与报告智能体，由记忆智能体在任务之间搬运经验。",
+            },
+          },
+        ],
+        paras: [
+          {
+            en: "BioLab{{biolab}} takes a request in the form a biologist would actually phrase it — find me a new antibody target in liver cancer — and decomposes it into planning, reasoning, execution, criticism and reporting, each handled by a dedicated agent, with a memory agent accumulating experience across tasks. What separates it from a general-purpose research agent is the tool layer: xBio-Tools exposes cross-modal biological foundation models for DNA, RNA, protein, cell and molecules alongside ordinary bioinformatics utilities. The critic agent matters as much as the planner — without something that argues back, an agent will happily report a confident, wrong conclusion.",
+            zh: "BioLab{{biolab}} 接受的是生物学家真正会说出口的请求——帮我在肝癌里找一个新的抗体靶点——再把它拆成规划、推理、执行、评审与报告，由各自的智能体承担，并让记忆智能体在任务之间累积经验。它与通用科研智能体的区别在工具层：xBio-Tools 把覆盖 DNA、RNA、蛋白质、细胞与小分子的跨模态生物基础模型，与常规生物信息学工具一起暴露出来。评审智能体和规划智能体同样重要——没有一个会反驳的角色，智能体会非常自信地给出一个错误结论。",
+          },
+        ],
       },
       {
-        src: "photos/research/stella.jpg",
-        href: "https://arxiv.org/abs/2507.02004",
-        caption: {
-          en: "STELLA: a self-evolving LLM agent for biomedical research.",
-          zh: "STELLA：面向生物医学研究的自进化智能体。",
-        },
+        h: { en: "STELLA: an agent that improves itself", zh: "STELLA：会自我进化的智能体" },
+        figures: [
+          {
+            src: "photos/research/crops/models-stella.jpg",
+            side: "wide",
+            caption: {
+              en: "Two things grow with use: a library of reasoning templates, and an ocean of tools the agent has taught itself to call.",
+              zh: "两样东西随使用而增长：推理模板库，以及智能体自己学会调用的工具海。",
+            },
+          },
+        ],
+        paras: [
+          {
+            en: "Most agents are as capable on their last day as on their first: templates and tools are fixed at deployment. STELLA{{stella}} is built to move that ceiling. It maintains a template library of reasoning patterns that grows as it solves problems, and a tool-creation agent that writes and tests new tools, adding them to a tool ocean it can later draw on. On biomedical benchmarks its accuracy keeps climbing as it accumulates experience. That result is why I think the interesting metric for a research agent is not accuracy on one benchmark but whether failure leaves anything reusable behind.",
+            zh: "多数智能体在上线那天能力就封顶了：模板与工具是写死的。STELLA{{stella}} 想把这个上限推上去。它维护一个推理模板库，随着解题不断扩充；再由工具创建智能体编写并测试新工具，加入日后可以随时取用的工具海。在生物医学基准上，它的准确率随经验累积持续上升。正是这个结果让我认为，衡量科研智能体的关键指标不是某个基准上的一次正确率，而是失败之后有没有留下可复用的东西。",
+          },
+        ],
       },
     ],
     code: [
       { label: "RNAGenesis", href: "https://github.com/zaixizhang/rnagenesis" },
       { label: "STELLA", href: "https://github.com/zaixizhang/STELLA" },
       { label: "STELLA demo", href: "https://stella-agent.com/" },
+    ],
+    refs: [
+      {
+        key: "esm2",
+        text: "Z. Lin, H. Akin, R. Rao, et al. Evolutionary-scale prediction of atomic-level protein structure with a language model. <i>Science</i>, 2023.",
+        href: "https://doi.org/10.1126/science.ade2574",
+      },
+      {
+        key: "evo",
+        text: "E. Nguyen, M. Poli, M. G. Durrant, et al. Sequence modeling and design from molecular to genome scale with Evo. <i>Science</i>, 2024.",
+        href: "https://doi.org/10.1126/science.ado9336",
+      },
+      {
+        key: "rnafm",
+        text: "J. Chen, Z. Hu, S. Sun, et al. Interpretable RNA foundation model from unannotated data for highly accurate RNA structure and function predictions. <i>arXiv:2204.00300</i>, 2022.",
+        href: "https://arxiv.org/abs/2204.00300",
+      },
+      {
+        key: "coscientist",
+        text: "D. A. Boiko, R. MacKnight, B. Kline, G. Gomes. Autonomous chemical research with large language models. <i>Nature</i>, 2023.",
+        href: "https://doi.org/10.1038/s41586-023-06792-0",
+      },
+      {
+        key: "chemcrow",
+        text: "A. M. Bran, S. Cox, O. Schilter, et al. Augmenting large language models with chemistry tools. <i>Nature Machine Intelligence</i>, 2024.",
+        href: "https://doi.org/10.1038/s42256-024-00832-8",
+      },
+      {
+        key: "aiscientist",
+        text: "C. Lu, C. Lu, R. T. Lange, et al. The AI Scientist: towards fully automated open-ended scientific discovery. <i>arXiv:2408.06292</i>, 2024.",
+        href: "https://arxiv.org/abs/2408.06292",
+      },
+      {
+        key: "rnagenesis",
+        mine: true,
+        text: "Z. Zhang, <b>R. Jin</b>, L. Chao, et al. RNAGenesis: a generalist foundation model for functional RNA therapeutics. <i>bioRxiv</i>, 2024.",
+        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
+      },
+      {
+        key: "af3",
+        text: "J. Abramson, J. Adler, J. Dunger, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. <i>Nature</i>, 2024.",
+        href: "https://doi.org/10.1038/s41586-024-07487-w",
+      },
+      {
+        key: "biolab",
+        mine: true,
+        text: "<b>R. Jin</b>, Y. Guo, Y. Qu, et al. BioLab: end-to-end autonomous life sciences research with a multi-agent system integrating biological foundation models. <i>bioRxiv</i>, 2025.",
+        href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085v1",
+      },
+      {
+        key: "stella",
+        mine: true,
+        text: "<b>R. Jin</b>, Z. Zhang, M. Wang, L. Cong. STELLA: self-evolving LLM agent for biomedical research. <i>arXiv:2507.02004</i>, 2025.",
+        href: "https://arxiv.org/abs/2507.02004",
+      },
     ],
   },
   {
@@ -213,50 +398,129 @@ const DIRECTIONS = [
       en: "GeneBreaker and FoldMark.",
       zh: "GeneBreaker 与 FoldMark。",
     },
-    contrib: {
-      en: "Co-first author on GeneBreaker (NeurIPS 2025 BioSafeGenAI Best Paper & Oral). Co-first author on FoldMark, watermarking protein generative models.",
-      zh: "GeneBreaker 共同一作（NeurIPS 2025 BioSafeGenAI 最佳论文与口头报告）。FoldMark 共同一作：蛋白质生成模型水印。",
-    },
-    story: {
-      en: "GeneBreaker is a pathogenicity-guided jailbreak evaluation of DNA language models. FoldMark watermarks generated protein structures so they can be traced.",
-      zh: "GeneBreaker 是致病性引导的 DNA 语言模型越狱评测。FoldMark 为生成的蛋白质结构嵌入可溯源水印。",
-    },
-    works: [
+    sections: [
       {
-        name: "GeneBreaker",
-        href: "https://arxiv.org/abs/2505.23839",
-        note: { en: "arXiv:2505.23839 · NeurIPS 2025 workshop Best Paper & Oral", zh: "arXiv:2505.23839 · NeurIPS 2025 workshop 最佳论文与口头报告" },
+        h: { en: "Background", zh: "背景" },
+        paras: [
+          {
+            en: "The same model that accelerates drug design can be run backwards. That was demonstrated plainly in 2022: invert the objective of a toxicity predictor and it proposes forty thousand candidate toxic molecules in six hours{{urbina}}. With genome-scale DNA language models such as Evo{{evo}}, the concern moves from molecules to sequences — a model that can generate functional genomic elements can generate harmful ones.",
+            zh: "同一个能加速药物设计的模型，也可以被反过来用。2022 年有人直接演示过：把毒性预测模型的目标函数取反，六小时内它就提出了四万余个候选毒剂分子{{urbina}}。当 Evo{{evo}} 这类基因组尺度的 DNA 语言模型出现后，问题从分子扩展到序列——能生成功能性基因组元件的模型，同样能生成有害的元件。",
+          },
+          {
+            en: "Policy is converging: screen and log every synthesised DNA sequence{{bakerchurch}}, and build governance for biological models before they outrun it{{governance}}. Two technical questions are still open underneath that consensus. Can we red-team biological models as systematically as we now red-team language models{{jailbroken}}{{gcg}}, and put a number on the risk? And once a design leaves the lab, can anyone tell which model produced it?",
+            zh: "政策侧的共识正在形成：对所有合成 DNA 序列做筛查与留痕{{bakerchurch}}，并在生物模型跑得更远之前建立治理框架{{governance}}。但共识之下，两个技术问题仍然空着。其一，我们能不能像现在红队测试语言模型那样{{jailbroken}}{{gcg}}，系统地测试生物模型，并给风险一个可比较的数字？其二，一个设计一旦流出实验室，还有没有办法判断它出自哪个模型？",
+          },
+        ],
       },
       {
-        name: "FoldMark",
-        href: "https://arxiv.org/abs/2410.20354",
-        note: { en: "arXiv:2410.20354 · co-first, second listed", zh: "arXiv:2410.20354 · 共同一作，排名第二" },
+        h: { en: "GeneBreaker: measuring the risk", zh: "GeneBreaker：把风险量出来" },
+        figures: [
+          {
+            src: "photos/research/crops/safety-beam.jpg",
+            side: "right",
+            caption: {
+              en: "Generation steered by a pathogenicity predictor and sequence likelihood, then judged by alignment against human pathogen databases.",
+              zh: "以致病性预测与序列似然引导生成，再用与人类致病数据库的比对来判定。",
+            },
+          },
+        ],
+        paras: [
+          {
+            en: "GeneBreaker{{genebreaker}} answers the first question. It formalises jailbreaking a DNA language model as a guided search: a language model drafts prompts carrying homology cues, beam search steers generation with a pathogenicity predictor and sequence likelihood as reward, and success is judged by nucleotide- and protein-level alignment against human pathogen databases rather than by anyone's impression. Run against current DNA language models across several human pathogenic virus families, the pipeline reaches sequences with high homology to known pathogenic elements — which is to say these models today carry almost no internal safety boundary. The work received the Best Paper Award and an oral at the NeurIPS 2025 BioSafeGenAI workshop, and we extended it into a systematic benchmark{{safebench}}.",
+            zh: "GeneBreaker{{genebreaker}} 回答第一个问题。它把 DNA 语言模型的越狱形式化为一次有引导的搜索：先由语言模型设计带同源线索的提示，再以致病性预测器与序列似然为奖励做束搜索，最后用核酸与蛋白两个层面对人类致病数据库的比对来判定是否成功——判据是比对结果，而不是谁的主观印象。在多个人类致病病毒家族上运行这套流程，当前的 DNA 语言模型都能被引导输出与已知致病元件高度同源的序列，也就是说，它们今天几乎没有内建的安全边界。该工作获 NeurIPS 2025 BioSafeGenAI Workshop 最佳论文与口头报告，我们随后把它扩展成了更系统的评测基准{{safebench}}。",
+          },
+        ],
       },
-    ],
-    figures: [
       {
-        src: "photos/research/genebreaker.jpg",
-        href: "https://arxiv.org/abs/2505.23839",
-        caption: {
-          en: "GeneBreaker: pathogenicity-guided jailbreaks of DNA language models.",
-          zh: "GeneBreaker：致病性引导的 DNA 语言模型越狱评测。",
-        },
+        h: { en: "FoldMark: tracing a design back to its model", zh: "FoldMark：让设计能被追溯" },
+        figures: [
+          {
+            src: "photos/research/crops/safety-foldmark.jpg",
+            side: "left",
+            caption: {
+              en: "A watermark encoded into the generative model and recovered from the structure it produces.",
+              zh: "水印被编码进生成模型，再从它产出的结构中还原出来。",
+            },
+          },
+        ],
+        paras: [
+          {
+            en: "FoldMark{{foldmark}} answers the second. Watermarking text is by now well understood{{watermark}}, but a protein structure is unforgiving: perturb it and it may simply stop folding. FoldMark works in two stages — adapters encode a watermark into the latent space of a protein generative model, and an extractor recovers it from the generated structure. Designability and novelty stay essentially unchanged, and the mark survives a reasonable amount of post-processing and fine-tuning, which is what makes provenance claims possible at all.",
+            zh: "FoldMark{{foldmark}} 回答第二个。文本水印如今已相当成熟{{watermark}}，但蛋白质结构不留情面：稍加扰动，它可能就折不起来了。FoldMark 分两步——用适配器把水印编码进蛋白质生成模型的隐空间，再用提取器从生成的结构中还原它。可设计性与新颖性基本不受影响，水印也能扛住一定程度的后处理与微调，这才让溯源这件事在原则上成立。",
+          },
+        ],
       },
       {
-        src: "photos/research/foldmark.jpg",
-        href: "https://arxiv.org/abs/2410.20354",
-        caption: {
-          en: "FoldMark: watermarking generated protein structures for tracing.",
-          zh: "FoldMark：为生成的蛋白质结构嵌入可溯源水印。",
-        },
+        h: { en: "Why work on this", zh: "为什么做这件事" },
+        paras: [
+          {
+            en: "Publishing an attack always invites the question of whether it hands someone a manual. My view is that the capability described here already exists in open-weight models that anyone can download; what did not exist was a reproducible way to measure it. A field cannot make its models safer against a risk it has never quantified, and it cannot ask for governance while unable to say how large the problem is. Both projects are attempts to give the safety conversation numbers instead of adjectives.",
+            zh: "公开一个攻击，总会被问是不是在给人递说明书。我的看法是：这里描述的能力本来就存在于任何人都能下载的开源权重里，原本不存在的，是一种可复现的度量方式。一个领域无法针对从未被量化的风险去加固模型，也无法在说不清问题有多大的时候去要求治理。这两项工作，都是想让安全讨论用上数字，而不是形容词。",
+          },
+        ],
       },
     ],
     code: [
       { label: "GeneBreaker", href: "https://github.com/zaixizhang/genebreaker" },
       { label: "FoldMark", href: "https://github.com/zaixizhang/FoldMark" },
     ],
+    refs: [
+      {
+        key: "urbina",
+        text: "F. Urbina, F. Lentzos, C. Invernizzi, S. Ekins. Dual use of artificial-intelligence-powered drug discovery. <i>Nature Machine Intelligence</i>, 2022.",
+        href: "https://doi.org/10.1038/s42256-022-00465-9",
+      },
+      {
+        key: "evo",
+        text: "E. Nguyen, M. Poli, M. G. Durrant, et al. Sequence modeling and design from molecular to genome scale with Evo. <i>Science</i>, 2024.",
+        href: "https://doi.org/10.1126/science.ado9336",
+      },
+      {
+        key: "bakerchurch",
+        text: "D. Baker, G. Church. Protein design meets biosecurity. <i>Science</i>, 2024.",
+        href: "https://doi.org/10.1126/science.ado1671",
+      },
+      {
+        key: "governance",
+        text: "D. Bloomfield, J. Pannu, A. W. Zhu, et al. AI and biosecurity: the need for governance. <i>Science</i>, 2024.",
+        href: "https://doi.org/10.1126/science.adq1977",
+      },
+      {
+        key: "jailbroken",
+        text: "A. Wei, N. Haghtalab, J. Steinhardt. Jailbroken: how does LLM safety training fail? <i>NeurIPS</i>, 2023.",
+        href: "https://arxiv.org/abs/2307.02483",
+      },
+      {
+        key: "gcg",
+        text: "A. Zou, Z. Wang, N. Carlini, et al. Universal and transferable adversarial attacks on aligned language models. <i>arXiv:2307.15043</i>, 2023.",
+        href: "https://arxiv.org/abs/2307.15043",
+      },
+      {
+        key: "genebreaker",
+        mine: true,
+        text: "<b>R. Jin</b>, Z. Zhou, Z. Zhang, L. Cong, M. Wang. GeneBreaker: jailbreak attacks against DNA language models with pathogenicity guidance. <i>NeurIPS 2025 BioSafeGenAI Workshop</i> (Best Paper, Oral).",
+        href: "https://arxiv.org/abs/2505.23839",
+      },
+      {
+        key: "safebench",
+        mine: true,
+        text: "<b>R. Jin</b>, Z. Zhou, Z. Zhang, L. Cong, M. Wang. Systematic biosafety evaluation of DNA language models under jailbreak attacks. <i>ICLR</i>, 2026.",
+      },
+      {
+        key: "foldmark",
+        mine: true,
+        text: "Z. Zhang, <b>R. Jin</b>, K. Fu, L. Cong, M. Zitnik, M. Wang. FoldMark: protecting protein generative models with watermarking. <i>arXiv:2410.20354</i>, 2024.",
+        href: "https://arxiv.org/abs/2410.20354",
+      },
+      {
+        key: "watermark",
+        text: "J. Kirchenbauer, J. Geiping, Y. Wen, J. Katz, I. Miers, T. Goldstein. A watermark for large language models. <i>ICML</i>, 2023.",
+        href: "https://arxiv.org/abs/2301.10226",
+      },
+    ],
   },
 ];
+
 const PUBS_REVIEW = [
   {
     title: "STELLA: Self-Evolving LLM Agent for Biomedical Research",
