@@ -3,50 +3,31 @@ const I18N = {
     "brand.name": "Ruofan Jin",
     "hero.name": "Ruofan Jin",
     "hero.photoAlt": "Portrait of Ruofan Jin",
-    "nav.about": "About",
     "nav.research": "Research",
-    "nav.publications": "Publications",
-    "nav.experience": "Experience",
+    "nav.publications": "Papers",
+    "nav.education": "Education",
+    "nav.honors": "Honors",
+    "nav.hobbies": "Hobbies",
     "nav.contact": "Contact",
     "hero.role": "Assistant Professor",
     "hero.affil": "Zhongguancun Academy · Beijing",
+    "hero.bio":
+      "Assistant Professor at Zhongguancun Academy. Ph.D. in Biophysics, Zhejiang University (2026), advised by Tingjun Hou and Ruhong Zhou. Visiting student at Princeton ECE with Mengdi Wang, and visiting doctoral researcher at Stanford Medicine with Le Cong.",
     "hero.lead":
       "I work on biomolecular design for targeted immune regulation, scientific foundation models, scientific agents, and scientific AI safety.",
-    "news.label": "Recent",
-    "news.1": "Aug 2026 — Joined Zhongguancun Academy as Assistant Professor.",
-    "news.2": "Jun 2026 — Ph.D. in Biophysics, Zhejiang University.",
-    "news.3": "Invited to the WAIC CCTV AI Gala as a young AI talent.",
-    "news.4": "NeurIPS 2025 BioSafeGenAI Workshop — Best Paper Award & Oral.",
-    "about.title": "About",
-    "about.p1":
-      "I am an Assistant Professor at Zhongguancun Academy. I received my Ph.D. in Biophysics from Zhejiang University in June 2026, advised by Prof. Tingjun Hou and Prof. Ruhong Zhou. During my doctoral studies I visited Princeton ECE with Prof. Mengdi Wang (Qiushi Flying Eagle Program) and was a visiting doctoral researcher at Stanford School of Medicine with Prof. Le Cong.",
-    "about.p2":
-      "My work asks how AI agents can accelerate scientific discovery end to end: from self-evolving LLM agents (STELLA) and multi-agent laboratory systems (BioLab, LabOS), to RNA/protein foundation models (RNAGenesis), computational immunology (AttABseq, MultiTAP), and biosafety evaluation of generative models (GeneBreaker, JailbreakDNABench, SafeProtein). I also build research tools that scientists actually use, including BioClaw.",
-    "about.students":
-      "I am looking for motivated students and collaborators in AI for Science, agents, and biomolecular design.",
     "research.title": "Research",
-    "research.sub": "Current research interests.",
-    "r1.title": "Biomolecular Design for Targeted Immune Regulation",
-    "r1.body":
-      "Antibodies, antigens, and TCR–pHLA recognition, modeled and designed from both sequence and structure.",
-    "r2.title": "Scientific Foundation Models",
-    "r2.body":
-      "Foundation models for proteins and RNA, spanning representation, structure prediction, and de novo design.",
-    "r3.title": "Scientific Agents",
-    "r3.body":
-      "Self-evolving and multi-agent systems for tool orchestration, experiment planning, and lab execution.",
-    "r4.title": "Scientific AI Safety",
-    "r4.body":
-      "Red-teaming, evaluation, and alignment for models that can design or generate biology.",
-    "pub.title": "Publications",
+    "research.sub": "Click a direction for representative work, my role, and code.",
+    "research.open": "Open",
+    "research.contrib": "My role",
+    "research.works": "Representative work",
+    "research.code": "Code & tools",
+    "pub.title": "Papers",
     "pub.sub": "Equal contribution is marked with *. Preprints link to arXiv or bioRxiv.",
     "pub.review": "Preprints",
     "pub.published": "Published",
-    "exp.title": "Experience",
-    "exp.edu": "Education",
-    "exp.pos": "Appointments",
-    "exp.honors": "Honors",
-    "exp.service": "Academic service",
+    "edu.title": "Education",
+    "honors.title": "Honors",
+    "hobbies.title": "Hobbies",
     "contact.title": "Contact",
     "contact.affil": "Assistant Professor, Zhongguancun Academy, Beijing",
   },
@@ -54,49 +35,174 @@ const I18N = {
     "brand.name": "金若凡",
     "hero.name": "金若凡",
     "hero.photoAlt": "金若凡半身照",
-    "nav.about": "简介",
     "nav.research": "研究",
     "nav.publications": "论文",
-    "nav.experience": "经历",
+    "nav.education": "教育",
+    "nav.honors": "荣誉",
+    "nav.hobbies": "爱好",
     "nav.contact": "联系",
     "hero.role": "助理教授",
     "hero.affil": "北京中关村学院",
+    "hero.bio":
+      "北京中关村学院助理教授。2026 年于浙江大学获生物物理学博士学位，导师侯廷军教授、周如鸿教授。博士期间在普林斯顿大学 ECE 访问（王梦迪教授），并在斯坦福大学医学院任访问博士研究员（丛乐教授）。",
     "hero.lead":
       "我关注靶向免疫调控的生物大分子设计、科学基础大模型、科学智能体，以及科学智能安全。",
-    "news.label": "近况",
-    "news.1": "2026 年 8 月 — 全职入职北京中关村学院，任助理教授。",
-    "news.2": "2026 年 6 月 — 于浙江大学获生物物理学博士学位。",
-    "news.3": "作为青年 AI 人才受邀参加 WAIC 央视 AI 盛典。",
-    "news.4": "NeurIPS 2025 BioSafeGenAI Workshop 最佳论文奖与口头报告。",
-    "about.title": "简介",
-    "about.p1":
-      "我是北京中关村学院助理教授。2026 年 6 月于浙江大学生命科学学院获生物物理学博士学位，导师为侯廷军教授、周如鸿教授。博士期间获“求是飞鹰计划”资助，在普林斯顿大学电气与计算机工程系访问（导师：王梦迪教授），并在斯坦福大学医学院任访问博士研究员（导师：丛乐教授）。",
-    "about.p2":
-      "研究主线是用 AI 智能体加速科学发现：自进化大模型智能体（STELLA）、多智能体实验系统（BioLab、LabOS）、RNA/蛋白质基础模型（RNAGenesis）、计算免疫学（AttABseq、MultiTAP），以及生成式模型的生物安全评测（GeneBreaker、JailbreakDNABench、SafeProtein）。我也把算法做成科研人员可以使用的工具，包括 BioClaw。",
-    "about.students": "课题组欢迎对 AI for Science、智能体与生物大分子设计感兴趣的同学与合作者。",
     "research.title": "研究",
-    "research.sub": "目前关注的方向。",
-    "r1.title": "靶向免疫调控的生物大分子设计",
-    "r1.body": "抗体、抗原与 TCR–pHLA 识别，从序列和结构两侧做建模与设计。",
-    "r2.title": "科学基础大模型",
-    "r2.body": "面向蛋白质与 RNA 的基础模型，覆盖表征、结构预测与从头设计。",
-    "r3.title": "科学智能体",
-    "r3.body": "自进化与多智能体系统：工具编排、实验规划与实验室执行。",
-    "r4.title": "科学智能安全",
-    "r4.body": "对能够设计或生成生物分子的模型做红队测试、评测与对齐。",
+    "research.sub": "点击方向，查看代表工作、我的贡献和代码。",
+    "research.open": "查看",
+    "research.contrib": "我的贡献",
+    "research.works": "代表工作",
+    "research.code": "代码与工具",
     "pub.title": "论文",
     "pub.sub": "共同一作以 * 标注。预印本链接至 arXiv 或 bioRxiv。",
-    "pub.review": "预印本",
+    "pub.review": "待发表",
     "pub.published": "已发表",
-    "exp.title": "经历",
-    "exp.edu": "教育",
-    "exp.pos": "任职",
-    "exp.honors": "荣誉",
-    "exp.service": "学术服务",
-    "contact.title": "联系",
+    "edu.title": "教育经历",
+    "honors.title": "获得荣誉",
+    "hobbies.title": "兴趣爱好",
+    "contact.title": "联系方式",
     "contact.affil": "助理教授，北京中关村学院",
   },
 };
+
+const DIRECTIONS = [
+  {
+    id: "immune",
+    title: {
+      en: "Biomolecular Design for Targeted Immune Regulation",
+      zh: "靶向免疫调控的生物大分子设计",
+    },
+    body: {
+      en: "Antibodies, antigens, and TCR–pHLA recognition, from sequence and structure.",
+      zh: "抗体、抗原与 TCR–pHLA 识别，从序列和结构两侧做建模与设计。",
+    },
+    contrib: {
+      en: "Sole first author on AttABseq, a sequence-only model for antigen–antibody affinity changes (Pearson R > 0.7, no 3D structure required), and on MultiTAP, which fuses TCR–pHLA sequence and structure. Also wrote a cover review on deep-learning antibody optimization.",
+      zh: "AttABseq 独立一作：不依赖三维结构的抗原–抗体亲和力预测（Pearson R > 0.7）。MultiTAP 独立一作：融合 TCR–pHLA 的序列与结构。另有一篇深度学习抗体优化综述，为浙大学报 B 封面文章。",
+    },
+    works: [
+      {
+        name: "AttABseq",
+        href: "https://doi.org/10.1093/bib/bbae304",
+        note: { en: "Briefings in Bioinformatics · sole first author", zh: "Briefings in Bioinformatics · 独立一作" },
+      },
+      {
+        name: "MultiTAP",
+        href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193v1",
+        note: { en: "bioRxiv · sole first author", zh: "bioRxiv · 独立一作" },
+      },
+      {
+        name: "Antibody optimization review",
+        href: null,
+        note: { en: "J. Zhejiang Univ.-SCIENCE B · cover article", zh: "浙大学报 B · 封面文章" },
+      },
+    ],
+    code: [],
+  },
+  {
+    id: "foundation",
+    title: { en: "Scientific Foundation Models", zh: "科学基础大模型" },
+    body: {
+      en: "Foundation models for proteins and RNA: representation, structure, and de novo design.",
+      zh: "面向蛋白质与 RNA 的基础模型，覆盖表征、结构预测与从头设计。",
+    },
+    contrib: {
+      en: "Co-first author (second listed) on RNAGenesis, a generalist RNA foundation model, including architecture and distributed pre-training. Co-first author (second listed) on FoldMark, a watermarking method for protein generative models.",
+      zh: "RNAGenesis 共同一作（第二）：通用 RNA 基础模型，参与架构与分布式预训练。FoldMark 共同一作（第二）：蛋白质生成模型的水印与溯源。",
+    },
+    works: [
+      {
+        name: "RNAGenesis",
+        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
+        note: { en: "bioRxiv · co-first, second listed", zh: "bioRxiv · 共同一作，排名第二" },
+      },
+      {
+        name: "FoldMark",
+        href: "https://arxiv.org/abs/2410.20354",
+        note: { en: "arXiv:2410.20354 · co-first, second listed", zh: "arXiv:2410.20354 · 共同一作，排名第二" },
+      },
+    ],
+    code: [
+      { label: "RNAGenesis", href: "https://github.com/zaixizhang/rnagenesis" },
+      { label: "FoldMark", href: "https://github.com/zaixizhang/FoldMark" },
+    ],
+  },
+  {
+    id: "agents",
+    title: { en: "Scientific Agents", zh: "科学智能体" },
+    body: {
+      en: "Self-evolving and multi-agent systems for tool use, experiment planning, and lab execution.",
+      zh: "自进化与多智能体系统：工具编排、实验规划与实验室执行。",
+    },
+    contrib: {
+      en: "Sole first author of STELLA, a self-evolving LLM agent. Lead co-first author of BioLab, a multi-agent system with 200+ tools. Contributed the multi-agent layer of LabOS. Sole first author of Agentic-VLA. Also built BioClaw, a multi-channel bioinformatics assistant in real use.",
+      zh: "STELLA 独立一作：自进化生物医学 LLM Agent。BioLab 共同一作（排名第一）：融合 200+ 工具的多智能体系统。参与 LabOS 的多智能体交互层。Agentic-VLA 独立一作。另有多端生信助手 BioClaw 在真实科研场景中使用。",
+    },
+    works: [
+      {
+        name: "STELLA",
+        href: "https://arxiv.org/abs/2507.02004",
+        note: { en: "arXiv:2507.02004 · sole first author", zh: "arXiv:2507.02004 · 独立一作" },
+      },
+      {
+        name: "BioLab",
+        href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085v1",
+        note: { en: "bioRxiv · co-first, first listed", zh: "bioRxiv · 共同一作，排名第一" },
+      },
+      {
+        name: "LabOS",
+        href: "https://arxiv.org/abs/2510.14861",
+        note: { en: "arXiv:2510.14861", zh: "arXiv:2510.14861" },
+      },
+      {
+        name: "Agentic-VLA",
+        href: "https://arxiv.org/abs/2605.22896",
+        note: { en: "arXiv:2605.22896 · sole first author", zh: "arXiv:2605.22896 · 独立一作" },
+      },
+    ],
+    code: [
+      { label: "STELLA", href: "https://github.com/zaixizhang/STELLA" },
+      { label: "STELLA demo", href: "https://stella-agent.com/" },
+      { label: "LabOS", href: "https://github.com/zaixizhang/LabOS" },
+      { label: "BioClaw", href: "https://bioclaw.tech/" },
+    ],
+  },
+  {
+    id: "safety",
+    title: { en: "Scientific AI Safety", zh: "科学智能安全" },
+    body: {
+      en: "Red-teaming, evaluation, and alignment for models that can design or generate biology.",
+      zh: "对能够设计或生成生物分子的模型做红队测试、评测与对齐。",
+    },
+    contrib: {
+      en: "Co-first author on GeneBreaker (NeurIPS 2025 BioSafeGenAI Best Paper & Oral) and JailbreakDNABench (ICLR 2026), and on SafeProtein. Co-first author on FoldMark for tracing generated protein structures. Leading organizer of the NeurIPS 2025 workshop on biosecurity safeguards for generative AI.",
+      zh: "GeneBreaker 共同一作（NeurIPS 2025 BioSafeGenAI 最佳论文与口头报告）、JailbreakDNABench 共同一作（ICLR 2026）、SafeProtein 共同一作。FoldMark 共同一作，用于蛋白质生成结果溯源。牵头组织 NeurIPS 2025 生成式 AI 生物安全研讨会。",
+    },
+    works: [
+      {
+        name: "GeneBreaker",
+        href: "https://github.com/zaixizhang/genebreaker",
+        note: { en: "NeurIPS 2025 workshop · Best Paper & Oral", zh: "NeurIPS 2025 workshop · 最佳论文与口头报告" },
+      },
+      {
+        name: "JailbreakDNABench",
+        href: null,
+        note: { en: "ICLR 2026 · co-first", zh: "ICLR 2026 · 共同一作" },
+      },
+      {
+        name: "SafeProtein",
+        href: null,
+        note: { en: "NeurIPS 2025 · co-first", zh: "NeurIPS 2025 · 共同一作" },
+      },
+      {
+        name: "FoldMark",
+        href: "https://arxiv.org/abs/2410.20354",
+        note: { en: "arXiv:2410.20354 · co-first, second listed", zh: "arXiv:2410.20354 · 共同一作，排名第二" },
+      },
+    ],
+    code: [{ label: "GeneBreaker", href: "https://github.com/zaixizhang/genebreaker" }],
+  },
+];
 
 const PUBS_REVIEW = [
   {
@@ -234,6 +340,11 @@ const EDU = {
       where: "ECE, Princeton University · Advisor: Mengdi Wang · Qiushi Flying Eagle Program",
     },
     {
+      when: "2025.03 – 2026.01",
+      what: "Visiting doctoral researcher",
+      where: "Stanford University School of Medicine · Advisor: Le Cong",
+    },
+    {
       when: "2017.09 – 2021.06",
       what: "B.S. in Biology",
       where: "School of Life Sciences, Zhejiang University · GPA 4.1/5.0, major 4.3/5.0, rank 4/45",
@@ -251,56 +362,14 @@ const EDU = {
       where: "普林斯顿大学电气与计算机工程系 · 导师：王梦迪教授 · 求是飞鹰计划",
     },
     {
-      when: "2017.09 – 2021.06",
-      what: "生物学理学学士",
-      where: "浙江大学生命科学学院 · 总绩点 4.1/5.0，专业 4.3/5.0，排名 4/45",
-    },
-  ],
-};
-
-const POS = {
-  en: [
-    {
-      when: "2026.08 – present",
-      what: "Assistant Professor",
-      where: "Zhongguancun Academy, Beijing",
-    },
-    {
-      when: "2025.03 – 2026.01",
-      what: "Visiting Doctoral Researcher",
-      where: "Stanford University School of Medicine · Advisor: Le Cong",
-    },
-    {
-      when: "2023.03 – 2024.01",
-      what: "Algorithm Intern",
-      where: "BioMap · Advisor: Le Song",
-    },
-    {
-      when: "2021.08 – 2022.06",
-      what: "Algorithm Intern",
-      where: "Tencent AI Lab · Advisor: Chang-Yu Hsieh",
-    },
-  ],
-  zh: [
-    {
-      when: "2026.08 – 至今",
-      what: "助理教授（全职）",
-      where: "北京中关村学院",
-    },
-    {
       when: "2025.03 – 2026.01",
       what: "访问博士研究员",
       where: "斯坦福大学医学院 · 导师：丛乐教授",
     },
     {
-      when: "2023.03 – 2024.01",
-      what: "算法实习生",
-      where: "百图生科 · 导师：宋乐教授",
-    },
-    {
-      when: "2021.08 – 2022.06",
-      what: "算法实习生",
-      where: "腾讯 AI Lab · 导师：谢昌谕教授",
+      when: "2017.09 – 2021.06",
+      what: "生物学理学学士",
+      where: "浙江大学生命科学学院 · 总绩点 4.1/5.0，专业 4.3/5.0，排名 4/45",
     },
   ],
 };
@@ -328,16 +397,10 @@ const HONORS = {
   ],
 };
 
-const SERVICE = {
-  en: [
-    "Leading organizer, NeurIPS 2025 Workshop: Biosecurity Safeguards for Generative AI (San Diego)",
-    "Reviewer: Briefings in Bioinformatics; Journal of Zhejiang University-SCIENCE B; IEEE TCBB; IEEE JBHI; NeurIPS",
-  ],
-  zh: [
-    "牵头组织者：NeurIPS 2025 Workshop: Biosecurity Safeguards for Generative AI（圣地亚哥）",
-    "审稿：Briefings in Bioinformatics；Journal of Zhejiang University-SCIENCE B；IEEE TCBB；IEEE JBHI；NeurIPS",
-  ],
-};
+const HOBBIES = { en: [], zh: [] };
+
+let currentLang = "en";
+let openDir = null;
 
 function renderPubs(target, items) {
   target.innerHTML = items
@@ -375,7 +438,83 @@ function renderPlain(target, items) {
   target.innerHTML = items.map((t) => `<li>${t}</li>`).join("");
 }
 
+function renderDirections() {
+  const lang = currentLang;
+  const dict = I18N[lang];
+  const grid = document.getElementById("research-grid");
+  grid.innerHTML = DIRECTIONS.map(
+    (d) => `<button class="research-card${openDir === d.id ? " is-open" : ""}" type="button" data-id="${d.id}">
+      <h3>${d.title[lang]}</h3>
+      <p>${d.body[lang]}</p>
+      <span class="card-hint">${dict["research.open"]}</span>
+    </button>`
+  ).join("");
+  grid.querySelectorAll(".research-card").forEach((btn) => {
+    btn.addEventListener("click", () => toggleDirection(btn.dataset.id));
+  });
+  renderPanel();
+}
+
+function toggleDirection(id) {
+  openDir = openDir === id ? null : id;
+  renderDirections();
+  if (openDir) {
+    const panel = document.getElementById("research-panel");
+    panel.hidden = false;
+    panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+}
+
+function renderPanel() {
+  const panel = document.getElementById("research-panel");
+  const dict = I18N[currentLang];
+  const d = DIRECTIONS.find((x) => x.id === openDir);
+  if (!d) {
+    panel.hidden = true;
+    panel.innerHTML = "";
+    return;
+  }
+  const works = d.works
+    .map((w) => {
+      const name = w.href
+        ? `<a href="${w.href}" target="_blank" rel="noopener">${w.name}</a>`
+        : w.name;
+      return `<li>${name}<span> · ${w.note[currentLang]}</span></li>`;
+    })
+    .join("");
+  const code =
+    d.code.length === 0
+      ? ""
+      : `<h4>${dict["research.code"]}</h4>
+         <p class="code-links">${d.code
+           .map((c) => `<a href="${c.href}" target="_blank" rel="noopener">${c.label}</a>`)
+           .join("")}</p>`;
+  panel.hidden = false;
+  panel.innerHTML = `
+    <h3>${d.title[currentLang]}</h3>
+    <h4>${dict["research.contrib"]}</h4>
+    <p>${d.contrib[currentLang]}</p>
+    <h4>${dict["research.works"]}</h4>
+    <ul class="work-list">${works}</ul>
+    ${code}`;
+}
+
+function renderHobbies(lang) {
+  const section = document.getElementById("hobbies");
+  const items = HOBBIES[lang] || [];
+  const navLink = document.querySelector('.nav a[href="#hobbies"]');
+  if (!items.length) {
+    section.hidden = true;
+    if (navLink) navLink.hidden = true;
+    return;
+  }
+  section.hidden = false;
+  if (navLink) navLink.hidden = false;
+  renderPlain(document.getElementById("hobby-list"), items);
+}
+
 function applyLang(lang) {
+  currentLang = lang;
   const dict = I18N[lang];
   document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
   document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -388,10 +527,10 @@ function applyLang(lang) {
     const key = el.getAttribute("data-i18n-alt");
     if (dict[key] !== undefined) el.setAttribute("alt", dict[key]);
   });
+  renderDirections();
   renderTimeline(document.getElementById("edu-list"), EDU[lang]);
-  renderTimeline(document.getElementById("pos-list"), POS[lang]);
   renderPlain(document.getElementById("honor-list"), HONORS[lang]);
-  renderPlain(document.getElementById("service-list"), SERVICE[lang]);
+  renderHobbies(lang);
   localStorage.setItem("lang", lang);
 }
 
@@ -404,8 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyLang(lang);
 
   document.getElementById("langToggle").addEventListener("click", () => {
-    const next = (localStorage.getItem("lang") || "en") === "zh" ? "en" : "zh";
-    applyLang(next);
+    applyLang(currentLang === "zh" ? "en" : "zh");
   });
 
   const nav = document.getElementById("nav");

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruofan Jin · 金若凡</title>
-  <meta name="description" content="Ruofan Jin is an Assistant Professor at Zhongguancun Academy. Her research focuses on AI for Science, LLM agents, biomolecular design, and biosafety of generative AI." />
+  <meta name="description" content="Ruofan Jin is an Assistant Professor at Zhongguancun Academy. Research: biomolecular design for targeted immune regulation, scientific foundation models, scientific agents, and scientific AI safety." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -15,10 +15,11 @@
   <header class="site-header">
     <a class="brand" href="#top" data-i18n="brand.name">Ruofan Jin</a>
     <nav class="nav" id="nav">
-      <a href="#about" data-i18n="nav.about">About</a>
       <a href="#research" data-i18n="nav.research">Research</a>
-      <a href="#publications" data-i18n="nav.publications">Publications</a>
-      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#publications" data-i18n="nav.publications">Papers</a>
+      <a href="#education" data-i18n="nav.education">Education</a>
+      <a href="#honors" data-i18n="nav.honors">Honors</a>
+      <a href="#hobbies" data-i18n="nav.hobbies" hidden>Hobbies</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="header-actions">
@@ -33,6 +34,7 @@
         <p class="eyebrow" data-i18n="hero.role">Assistant Professor</p>
         <h1 data-i18n="hero.name">Ruofan Jin</h1>
         <p class="hero-affil" data-i18n="hero.affil">Zhongguancun Academy · Beijing</p>
+        <p class="hero-bio" data-i18n="hero.bio"></p>
         <p class="hero-lead" data-i18n="hero.lead">
           I work on biomolecular design for targeted immune regulation, scientific foundation models, scientific agents, and scientific AI safety.
         </p>
@@ -47,85 +49,45 @@
       </figure>
     </section>
 
-    <section class="news-bar" aria-label="Highlights">
-      <p><span data-i18n="news.label">Recent</span></p>
-      <ul>
-        <li data-i18n="news.1">Aug 2026 — Joined Zhongguancun Academy as Assistant Professor.</li>
-        <li data-i18n="news.2">Jun 2026 — Ph.D. in Biophysics, Zhejiang University.</li>
-        <li data-i18n="news.3">Invited to the WAIC CCTV AI Gala as a young AI talent.</li>
-        <li data-i18n="news.4">NeurIPS 2025 BioSafeGenAI Workshop — Best Paper Award &amp; Oral.</li>
-      </ul>
-    </section>
-
-    <section id="about" class="section">
-      <div class="section-head">
-        <h2 data-i18n="about.title">About</h2>
-      </div>
-      <div class="prose">
-        <p data-i18n="about.p1"></p>
-        <p data-i18n="about.p2"></p>
-        <p class="note" data-i18n="about.students"></p>
-      </div>
-    </section>
-
-    <section id="research" class="section section-alt">
+    <section id="research" class="section">
       <div class="section-head">
         <h2 data-i18n="research.title">Research</h2>
-        <p data-i18n="research.sub">Current research interests.</p>
+        <p data-i18n="research.sub">Click a direction for representative work, my role, and code.</p>
       </div>
-      <div class="research-grid">
-        <article>
-          <h3 data-i18n="r1.title">Biomolecular Design for Targeted Immune Regulation</h3>
-          <p data-i18n="r1.body">Antibodies, antigens, and TCR–pHLA recognition, modeled and designed from both sequence and structure.</p>
-        </article>
-        <article>
-          <h3 data-i18n="r2.title">Scientific Foundation Models</h3>
-          <p data-i18n="r2.body">Foundation models for proteins and RNA, spanning representation, structure prediction, and de novo design.</p>
-        </article>
-        <article>
-          <h3 data-i18n="r3.title">Scientific Agents</h3>
-          <p data-i18n="r3.body">Self-evolving and multi-agent systems for tool orchestration, experiment planning, and lab execution.</p>
-        </article>
-        <article>
-          <h3 data-i18n="r4.title">Scientific AI Safety</h3>
-          <p data-i18n="r4.body">Red-teaming, evaluation, and alignment for models that can design or generate biology.</p>
-        </article>
-      </div>
+      <div class="research-grid" id="research-grid"></div>
+      <div class="research-panel" id="research-panel" hidden></div>
     </section>
 
-    <section id="publications" class="section">
+    <section id="publications" class="section section-alt">
       <div class="section-head">
-        <h2 data-i18n="pub.title">Publications</h2>
+        <h2 data-i18n="pub.title">Papers</h2>
         <p data-i18n="pub.sub">Equal contribution is marked with *. Preprints link to arXiv or bioRxiv.</p>
       </div>
-
       <h3 class="list-label" data-i18n="pub.review">Preprints</h3>
       <ol class="pubs" id="pubs-review"></ol>
-
       <h3 class="list-label" data-i18n="pub.published">Published</h3>
       <ol class="pubs" id="pubs-published"></ol>
     </section>
 
-    <section id="experience" class="section section-alt">
+    <section id="education" class="section">
       <div class="section-head">
-        <h2 data-i18n="exp.title">Experience</h2>
+        <h2 data-i18n="edu.title">Education</h2>
       </div>
-      <div class="exp-grid">
-        <div>
-          <h3 data-i18n="exp.edu">Education</h3>
-          <ul class="timeline" id="edu-list"></ul>
-        </div>
-        <div>
-          <h3 data-i18n="exp.pos">Appointments</h3>
-          <ul class="timeline" id="pos-list"></ul>
-        </div>
-      </div>
+      <ul class="timeline" id="edu-list"></ul>
+    </section>
 
-      <h3 class="list-label" data-i18n="exp.honors">Honors</h3>
+    <section id="honors" class="section section-alt">
+      <div class="section-head">
+        <h2 data-i18n="honors.title">Honors</h2>
+      </div>
       <ul class="plain" id="honor-list"></ul>
+    </section>
 
-      <h3 class="list-label" data-i18n="exp.service">Academic service</h3>
-      <ul class="plain" id="service-list"></ul>
+    <section id="hobbies" class="section" hidden>
+      <div class="section-head">
+        <h2 data-i18n="hobbies.title">Hobbies</h2>
+      </div>
+      <ul class="plain" id="hobby-list"></ul>
     </section>
 
     <section id="contact" class="section">
