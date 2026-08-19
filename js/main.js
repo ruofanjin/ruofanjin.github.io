@@ -1,5 +1,8 @@
 const I18N = {
   en: {
+    "brand.name": "Ruofan Jin",
+    "hero.name": "Ruofan Jin",
+    "hero.photoAlt": "Portrait of Ruofan Jin",
     "nav.about": "About",
     "nav.research": "Research",
     "nav.publications": "Publications",
@@ -48,6 +51,9 @@ const I18N = {
     "contact.affil": "Assistant Professor, Zhongguancun Academy, Beijing",
   },
   zh: {
+    "brand.name": "金若凡",
+    "hero.name": "金若凡",
+    "hero.photoAlt": "金若凡半身照",
     "nav.about": "简介",
     "nav.research": "研究",
     "nav.publications": "论文",
@@ -374,6 +380,11 @@ function applyLang(lang) {
     if (dict[key] !== undefined) el.innerHTML = dict[key];
   });
   document.getElementById("langToggle").textContent = lang === "zh" ? "EN" : "中文";
+  document.title = lang === "zh" ? "金若凡" : "Ruofan Jin";
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-alt");
+    if (dict[key] !== undefined) el.setAttribute("alt", dict[key]);
+  });
   renderTimeline(document.getElementById("edu-list"), EDU[lang]);
   renderTimeline(document.getElementById("pos-list"), POS[lang]);
   renderPlain(document.getElementById("honor-list"), HONORS[lang]);
