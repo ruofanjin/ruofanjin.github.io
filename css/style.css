@@ -115,9 +115,10 @@ html[lang="zh-CN"] .hero h1 { letter-spacing: 0.12em; }
 }
 .hero-lead {
   margin: 28px 0 0;
-  max-width: 34em;
+  max-width: 36em;
   color: #ddd6cc;
-  font-size: 18px;
+  font-size: 17.5px;
+  line-height: 1.7;
 }
 .hero-links {
   display: flex;

@@ -11,7 +11,7 @@ const I18N = {
     "hero.role": "Assistant Professor",
     "hero.affil": "Zhongguancun Academy · Beijing",
     "hero.lead":
-      "I build AI agents and foundation models that accelerate scientific discovery, with a focus on biomedical research, biomolecular design, and the biosafety of generative AI.",
+      "How much of scientific discovery can AI carry out on its own? I build self-evolving agents that plan their own experiments, orchestrate hundreds of computational tools, and close the loop from prediction to the wet lab — together with the protein and RNA foundation models they reason over. And because a model that can design biology can also be misused, I work just as much on red-teaming and alignment for these models.",
     "news.label": "Recent",
     "news.1": "Aug 2026 — Joined Zhongguancun Academy as Assistant Professor.",
     "news.2": "Jun 2026 — Ph.D. in Biophysics, Zhejiang University.",
@@ -62,7 +62,7 @@ const I18N = {
     "hero.role": "助理教授",
     "hero.affil": "北京中关村学院",
     "hero.lead":
-      "我研究能够加速科学发现的人工智能智能体与基础模型，聚焦生物医学研究、生物大分子设计，以及生成式人工智能的生物安全。",
+      "科学发现中，有多少可以交给 AI 自己完成？我构建能够自我进化的智能体——它们自主规划实验、编排数百个计算工具，把从计算预测到湿实验验证的链条连成闭环；同时研发它们赖以推理的蛋白质与 RNA 基础模型。而能够设计生物分子的模型同样可能被滥用，因此我把同等的精力，放在这类模型的红队测试与安全对齐上。",
     "news.label": "近况",
     "news.1": "2026 年 8 月 — 全职入职北京中关村学院，任助理教授。",
     "news.2": "2026 年 6 月 — 于浙江大学获生物物理学博士学位。",
