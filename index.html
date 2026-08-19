@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruofan Jin · 金若凡</title>
+  <meta name="description" content="Ruofan Jin is an Assistant Professor at Zhongguancun Academy. Her research focuses on AI for Science, LLM agents, biomolecular design, and biosafety of generative AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect fill='%230c0c0d' width='64' height='64'/><text x='50%' y='54%' text-anchor='middle' fill='%23f4f0e8' font-family='Georgia' font-size='28'>RJ</text></svg>" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Ruofan Jin <span>金若凡</span></a>
+    <nav class="nav" id="nav">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#research" data-i18n="nav.research">Research</a>
+      <a href="#publications" data-i18n="nav.publications">Publications</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">中文</button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu">Menu</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.role">Assistant Professor</p>
+        <h1>Ruofan Jin</h1>
+        <p class="hero-affil" data-i18n="hero.affil">Zhongguancun Academy · Beijing</p>
+        <p class="hero-lead" data-i18n="hero.lead">
+          I build AI agents and foundation models that accelerate scientific discovery,
+          with a focus on biomedical research, biomolecular design, and the biosafety of generative AI.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:rufeeking0105@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=nG5izwYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://bioclaw.tech/" target="_blank" rel="noopener">BioClaw</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="photos/portrait.jpg" alt="Portrait of Ruofan Jin" width="1023" height="1537" />
+      </figure>
+    </section>
+
+    <section class="news-bar" aria-label="Highlights">
+      <p><span data-i18n="news.label">Recent</span></p>
+      <ul>
+        <li data-i18n="news.1">Aug 2026 — Joined Zhongguancun Academy as Assistant Professor.</li>
+        <li data-i18n="news.2">Jun 2026 — Ph.D. in Biophysics, Zhejiang University.</li>
+        <li data-i18n="news.3">Invited to the WAIC CCTV AI Gala as a young AI talent.</li>
+        <li data-i18n="news.4">NeurIPS 2025 BioSafeGenAI Workshop — Best Paper Award &amp; Oral.</li>
+      </ul>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2 data-i18n="about.title">About</h2>
+      </div>
+      <div class="prose">
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+        <p class="note" data-i18n="about.students"></p>
+      </div>
+    </section>
+
+    <section id="research" class="section section-alt">
+      <div class="section-head">
+        <h2 data-i18n="research.title">Research</h2>
+        <p data-i18n="research.sub">Four connected questions around using AI agents to accelerate science.</p>
+      </div>
+      <div class="research-grid">
+        <article>
+          <h3 data-i18n="r1.title">AI for Science &amp; LLM Agents</h3>
+          <p data-i18n="r1.body">Self-evolving and multi-agent systems that plan, tool-use, and close the loop from computation to experiment.</p>
+        </article>
+        <article>
+          <h3 data-i18n="r2.title">Protein / RNA Foundation Models</h3>
+          <p data-i18n="r2.body">Large-scale models for sequence–structure generation and de novo design of functional biomolecules.</p>
+        </article>
+        <article>
+          <h3 data-i18n="r3.title">Computational Immunology</h3>
+          <p data-i18n="r3.body">Sequence- and structure-aware models for antibody affinity, tumor antigens, and AI-assisted discovery.</p>
+        </article>
+        <article>
+          <h3 data-i18n="r4.title">Biosafety of Generative AI</h3>
+          <p data-i18n="r4.body">Red-teaming, evaluation, and alignment for DNA and protein language models under dual-use risk.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="section-head">
+        <h2 data-i18n="pub.title">Publications</h2>
+        <p data-i18n="pub.sub">Selected and recent works. Equal contribution is marked with *.</p>
+      </div>
+
+      <h3 class="list-label" data-i18n="pub.review">Under review / in revision</h3>
+      <ol class="pubs" id="pubs-review"></ol>
+
+      <h3 class="list-label" data-i18n="pub.published">Published</h3>
+      <ol class="pubs" id="pubs-published"></ol>
+    </section>
+
+    <section id="experience" class="section section-alt">
+      <div class="section-head">
+        <h2 data-i18n="exp.title">Experience</h2>
+      </div>
+      <div class="exp-grid">
+        <div>
+          <h3 data-i18n="exp.edu">Education</h3>
+          <ul class="timeline" id="edu-list"></ul>
+        </div>
+        <div>
+          <h3 data-i18n="exp.pos">Appointments</h3>
+          <ul class="timeline" id="pos-list"></ul>
+        </div>
+      </div>
+
+      <h3 class="list-label" data-i18n="exp.honors">Honors</h3>
+      <ul class="plain" id="honor-list"></ul>
+
+      <h3 class="list-label" data-i18n="exp.service">Academic service</h3>
+      <ul class="plain" id="service-list"></ul>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2 data-i18n="contact.title">Contact</h2>
+      </div>
+      <div class="contact-row">
+        <p>
+          <a href="mailto:rufeeking0105@gmail.com">rufeeking0105@gmail.com</a><br />
+          <span data-i18n="contact.affil">Assistant Professor, Zhongguancun Academy, Beijing</span>
+        </p>
+        <p class="contact-links">
+          <a href="https://scholar.google.com/citations?user=nG5izwYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://bioclaw.tech/" target="_blank" rel="noopener">BioClaw</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Ruofan Jin · 金若凡</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
