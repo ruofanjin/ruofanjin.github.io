@@ -165,11 +165,6 @@ const DIRECTIONS = [
         href: "https://arxiv.org/abs/2507.02004",
         note: { en: "arXiv:2507.02004 · sole first author", zh: "arXiv:2507.02004 · 独立一作" },
       },
-      {
-        name: "BioClaw",
-        href: "https://bioclaw.tech/",
-        note: { en: "product · multi-channel bioinformatics assistant", zh: "产品 · 多端生信科研助手" },
-      },
     ],
     figures: [
       {
@@ -201,7 +196,6 @@ const DIRECTIONS = [
       { label: "RNAGenesis", href: "https://github.com/zaixizhang/rnagenesis" },
       { label: "STELLA", href: "https://github.com/zaixizhang/STELLA" },
       { label: "STELLA demo", href: "https://stella-agent.com/" },
-      { label: "BioClaw", href: "https://bioclaw.tech/" },
     ],
   },
   {
