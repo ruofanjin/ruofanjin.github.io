@@ -138,16 +138,16 @@ const DIRECTIONS = [
       zh: "科学基础大模型与科学智能体",
     },
     body: {
-      en: "RNAGenesis, BioLab, STELLA, and BioClaw.",
-      zh: "RNAGenesis、BioLab、STELLA 与 BioClaw。",
+      en: "RNAGenesis, BioLab, and STELLA.",
+      zh: "RNAGenesis、BioLab 与 STELLA。",
     },
     contrib: {
-      en: "Co-first author on RNAGenesis. Lead co-first author on BioLab. Sole first author on STELLA. BioClaw is the multi-channel research assistant built on this agent stack.",
-      zh: "RNAGenesis 共同一作。BioLab 共同一作（排名第一）。STELLA 独立一作。BioClaw 是基于这一智能体栈的多端科研助手。",
+      en: "Co-first author on RNAGenesis. Lead co-first author on BioLab. Sole first author on STELLA.",
+      zh: "RNAGenesis 共同一作。BioLab 共同一作（排名第一）。STELLA 独立一作。",
     },
     story: {
-      en: "RNAGenesis is a generalist RNA foundation model. BioLab is a multi-agent system that calls biological foundation models and tools. STELLA is a self-evolving LLM agent for biomedical research. BioClaw is the product layer on top of this stack.",
-      zh: "RNAGenesis 是通用 RNA 基础模型。BioLab 是调用生物基础模型与工具的多智能体系统。STELLA 是面向生物医学研究的自进化智能体。BioClaw 是这一栈上的产品层。",
+      en: "RNAGenesis is a generalist RNA foundation model. BioLab is a multi-agent system that calls biological foundation models and tools. STELLA is a self-evolving LLM agent for biomedical research.",
+      zh: "RNAGenesis 是通用 RNA 基础模型。BioLab 是调用生物基础模型与工具的多智能体系统。STELLA 是面向生物医学研究的自进化智能体。",
     },
     works: [
       {
