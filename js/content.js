@@ -315,8 +315,8 @@ const DIRECTIONS = [
             src: "photos/research/crops/models-stella.jpg",
             side: "wide",
             caption: {
-              en: "Two things grow with use: a library of reasoning templates, and an ocean of tools the agent has taught itself to call.",
-              zh: "两样东西随使用而增长：推理模板库，以及智能体自己学会调用的工具海。",
+              en: "Three closed loops where the agent's experience accumulates: NK target discovery in AML, enzyme optimisation, and training VLA models for robotic experiments.",
+              zh: "三条让经验得以累积的闭环：AML 中的 NK 靶点发现、酶的计算优化与定向进化、机器人实验的 VLA 模型训练。",
             },
           },
         ],
@@ -436,10 +436,10 @@ const DIRECTIONS = [
         figures: [
           {
             src: "photos/research/crops/safety-foldmark.jpg",
-            side: "left",
+            side: "wide",
             caption: {
-              en: "A watermark encoded into the generative model and recovered from the structure it produces.",
-              zh: "水印被编码进生成模型，再从它产出的结构中还原出来。",
+              en: "Two scenarios: a watermark encoded into the generative model is recovered from the structure it produces, to detect a stolen model or identify which user generated a structure.",
+              zh: "两种场景：水印被编码进生成模型，再从它产出的结构中还原——既可判断模型是否被盗用，也可识别结构由哪位用户生成。",
             },
           },
         ],
