@@ -39,8 +39,8 @@ const I18N = {
     "r4.body":
       "Red-teaming, evaluation, and alignment for DNA and protein language models under dual-use risk.",
     "pub.title": "Publications",
-    "pub.sub": "Selected and recent works. Equal contribution is marked with *.",
-    "pub.review": "Under review / in revision",
+    "pub.sub": "Equal contribution is marked with *. Preprints link to arXiv or bioRxiv.",
+    "pub.review": "Preprints",
     "pub.published": "Published",
     "exp.title": "Experience",
     "exp.edu": "Education",
@@ -85,8 +85,8 @@ const I18N = {
     "r4.title": "生成式 AI 的生物安全",
     "r4.body": "针对 DNA 与蛋白质语言模型的红队测试、评测与对齐。",
     "pub.title": "论文",
-    "pub.sub": "近期与代表性工作。共同一作以 * 标注。",
-    "pub.review": "在审 / 修回",
+    "pub.sub": "共同一作以 * 标注。预印本链接至 arXiv 或 bioRxiv。",
+    "pub.review": "预印本",
     "pub.published": "已发表",
     "exp.title": "经历",
     "exp.edu": "教育",
@@ -101,52 +101,52 @@ const I18N = {
 const PUBS_REVIEW = [
   {
     title: "STELLA: Self-Evolving LLM Agent for Biomedical Research",
-    authors: "<b>Ruofan Jin</b>, Zaixi Zhang*, Mengdi Wang, Le Cong",
-    venue: "Nature Biomedical Engineering",
-    note: "under revision, 2025 · sole first author",
+    authors: "<b>Ruofan Jin</b>*, Zaixi Zhang*, Mengdi Wang, Le Cong",
+    venue: "arXiv:2507.02004",
+    href: "https://arxiv.org/abs/2507.02004",
   },
   {
     title:
       "BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models",
     authors:
-      "<b>Ruofan Jin</b>, Yucheng Guo, Yuanhao Qu, et al. Ruhong Zhou*, Zaixi Zhang*, Mengdi Wang*, Xiaoming Zhang*, Le Cong*",
-    venue: "Nature Biomedical Engineering",
-    note: "under submission, 2025 · co-first, first listed",
+      "<b>Ruofan Jin</b>, Yucheng Guo, Yuanhao Qu, Ming Yang, Chun Shang, Qirong Yang, Linlin Chao, Yi Zhou, Ruilai Xu, Ziyao Xu, Ruhong Zhou, Zaixi Zhang, Mengdi Wang, Xiaoming Zhang, Le Cong",
+    venue: "bioRxiv 2025.09.03.674085",
+    href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085",
   },
   {
     title:
       "A Multi-Modal Deep Learning Framework with Both Sequence and Structure for Tumor Antigens Prediction",
     authors:
-      "<b>Ruofan Jin</b>, Jingxuan Ge, Guanqiao Zhang, Ziyan Deng, Kim Hsieh*, Tingjun Hou*, Ruhong Zhou*",
-    venue: "Science Advances",
-    note: "under revision, 2025 · sole first author",
+      "<b>Ruofan Jin</b>, Jingxuan Ge, Guanqiao Zhang, Ziyan Deng, Kim Hsieh, Tingjun Hou, Ruhong Zhou",
+    venue: "bioRxiv 2024.11.06.622193",
+    href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193",
   },
   {
     title: "Agentic-VLA: Efficient Online Adaptation for Vision-Language-Action Models",
-    authors: "<b>Ruofan Jin</b>, Zaixi Zhang*",
-    venue: "World Artificial Intelligence Conference (WAIC)",
-    note: "under revision · sole first author",
+    authors: "<b>Ruofan Jin</b>, Zaixi Zhang",
+    venue: "arXiv:2605.22896",
+    href: "https://arxiv.org/abs/2605.22896",
   },
   {
     title: "RNAGenesis: A Generalist Foundation Model for Functional RNA Therapeutics",
     authors:
-      "Zaixi Zhang, <b>Ruofan Jin</b>, Linlin Chao, et al. Weinan E, Ruhong Zhou*, Xiaoming Zhang*, Mengdi Wang*, Le Cong*",
-    venue: "Nature Biotechnology",
-    note: "under submission, 2025 · co-first, second listed",
+      "Zaixi Zhang, <b>Ruofan Jin</b>, Linlin Chao, Guangxue Xu, Yikun Zhang, Guowei Zhou, Di Yin, Yingqing Guo, Yaqi Fu, Yukang Yang, Kaixuan Huang, Xiaotong Wang, Junze Zhang, Yujie Yang, Qirong Yang, Ziyao Xu, Weinan E, Ruhong Zhou, Xiaoming Zhang, Mengdi Wang, Le Cong",
+    venue: "bioRxiv 2024.12.30.630826",
+    href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826",
   },
   {
     title: "FoldMark: Protecting Protein Generative Models with Watermarking",
     authors:
       "Zaixi Zhang, <b>Ruofan Jin</b>, Kaidi Fu, Le Cong, Marinka Žitnik, Mengdi Wang",
-    venue: "Nature Methods",
-    note: "under revision, 2025 · co-first, second listed",
+    venue: "arXiv:2410.20354",
+    href: "https://arxiv.org/abs/2410.20354",
   },
   {
     title: "LabOS: The AI-XR Co-Scientist That Sees and Works With Humans",
     authors:
-      "Le Cong*, David Smerkous, Xiaotong Wang, Di Yin, Zaixi Zhang, <b>Ruofan Jin</b>, et al., Mengdi Wang*",
-    venue: "Nature",
-    note: "under revision, 2025",
+      "Le Cong**, David Smerkous*, Xiaotong Wang*, Di Yin*, Zaixi Zhang*, <b>Ruofan Jin</b>, Yinkai Wang, Michal Gerasimiuk, Ravi K. Dinesh, Alex Smerkous, Lihan Shi, Joy Zheng, Ian Lam, Xuekun Wu, Shilong Liu, Peishan Li, Yi Zhu, Ning Zhao, Meenal Parakh, Simran Serrao, Imran A. Mohammad, Chao-Yeh Chen, Xiufeng Xie, Tiffany Chen, David Weinstein, Greg Barbone, Belgin Caglar, John B. Sunwoo, Fuxin Li, Jia Deng, Joseph C. Wu, Sanfeng Wu, Mengdi Wang**",
+    venue: "arXiv:2510.14861",
+    href: "https://arxiv.org/abs/2510.14861",
   },
 ];
 
@@ -345,12 +345,15 @@ function renderPubs(target, items) {
       const title = p.href
         ? `<a class="title" href="${p.href}" target="_blank" rel="noopener">${p.title}</a>`
         : `<span class="title">${p.title}</span>`;
+      const venue = p.href
+        ? `<a class="venue" href="${p.href}" target="_blank" rel="noopener">${p.venue}</a>`
+        : `<span class="venue">${p.venue}</span>`;
       const badge = p.badge ? `<span class="badge">${p.badge}</span>` : "";
       const note = p.note ? ` · ${p.note}` : "";
       return `<li><div>
         ${title}
         <div class="meta">${p.authors}</div>
-        <div class="meta"><span class="venue">${p.venue}</span>${note}${badge}</div>
+        <div class="meta">${venue}${note}${badge}</div>
       </div></li>`;
     })
     .join("");
