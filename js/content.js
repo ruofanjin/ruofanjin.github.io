@@ -88,6 +88,11 @@ const DIRECTIONS = [
     },
     works: [
       {
+        name: "OpenIO",
+        href: "https://doi.org/10.1016/j.ccell.2026.06.002",
+        note: { en: "Cancer Cell · commentary · co-author", zh: "Cancer Cell · commentary · 共同作者" },
+      },
+      {
         name: "AttABseq",
         href: "https://doi.org/10.1093/bib/bbae304",
         note: { en: "Briefings in Bioinformatics · sole first author", zh: "Briefings in Bioinformatics · 独立一作" },
@@ -304,6 +309,14 @@ const PUBS_REVIEW = [
 ];
 
 const PUBS_PUBLISHED = [
+  {
+    title: "OpenIO: An open framework for AI-native immunotherapy",
+    authors:
+      "Yingcheng Wu, Hao Xiao, Nan Jiang, Will Hua, Jiaqiang Ma, Jiacheng Ge, Yong Liu, Zhongyue Zhang, Jack Xiaoyu Chen, <b>Ruofan Jin</b>, Yingrui Wang, Jian Zhou, Jia Fan, Zaixiang Zheng, Lei Bai, Haifeng Ye, Qi Liu, Guoji Guo, Zaixi Zhang, Siqi Sun, Tiannan Guo, Shuangjia Zheng, Qiang Gao",
+    venue: "Cancer Cell",
+    note: "2026 · 44(7): 1315–1320 · commentary",
+    href: "https://doi.org/10.1016/j.ccell.2026.06.002",
+  },
   {
     title:
       "AttABseq: An Attention-based Deep Learning Prediction Method for Antigen-Antibody Binding Affinity Changes Based on Protein Sequences",
