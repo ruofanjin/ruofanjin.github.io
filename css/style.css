@@ -210,7 +210,7 @@ html[lang="zh-CN"] .hero h1 { letter-spacing: 0.12em; }
 
 .research-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
@@ -272,6 +272,29 @@ html[lang="zh-CN"] .hero h1 { letter-spacing: 0.12em; }
 }
 .work-list li { padding: 6px 0; border-bottom: 1px solid var(--line); }
 .work-list span { color: var(--muted); }
+.fig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin: 4px 0 8px;
+}
+.fig-grid figure {
+  margin: 0;
+}
+.fig-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.fig-grid a { text-decoration: none; }
+.fig-grid figcaption {
+  margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
 .code-links {
   display: flex;
   flex-wrap: wrap;
@@ -352,6 +375,10 @@ html[lang="zh-CN"] .hero h1 { letter-spacing: 0.12em; }
   text-align: center;
   color: var(--muted);
   font-size: 14px;
+}
+
+@media (max-width: 980px) {
+  .research-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {

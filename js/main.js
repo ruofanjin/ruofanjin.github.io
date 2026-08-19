@@ -14,12 +14,13 @@ const I18N = {
     "hero.bio":
       "Assistant Professor at Zhongguancun Academy. Ph.D. in Biophysics, Zhejiang University (2026), advised by Tingjun Hou and Ruhong Zhou. Visiting student at Princeton ECE with Mengdi Wang, and visiting doctoral researcher at Stanford Medicine with Le Cong.",
     "hero.lead":
-      "I work on biomolecular design for targeted immune regulation, scientific foundation models, scientific agents, and scientific AI safety.",
+      "I work on biomolecular design for targeted immune regulation; scientific foundation models and scientific agents; and scientific AI safety.",
     "research.title": "Research",
-    "research.sub": "Click a direction for representative work, my role, and code.",
+    "research.sub": "Click a direction for papers, figures, my role, and code.",
     "research.open": "Open",
     "research.contrib": "My role",
     "research.works": "Representative work",
+    "research.figures": "Figures",
     "research.code": "Code & tools",
     "pub.title": "Papers",
     "pub.sub": "Equal contribution is marked with *. Preprints link to arXiv or bioRxiv.",
@@ -46,12 +47,13 @@ const I18N = {
     "hero.bio":
       "北京中关村学院助理教授。2026 年于浙江大学获生物物理学博士学位，导师侯廷军教授、周如鸿教授。博士期间在普林斯顿大学 ECE 访问（王梦迪教授），并在斯坦福大学医学院任访问博士研究员（丛乐教授）。",
     "hero.lead":
-      "我关注靶向免疫调控的生物大分子设计、科学基础大模型、科学智能体，以及科学智能安全。",
+      "我关注靶向免疫调控的生物大分子设计、科学基础大模型与科学智能体，以及科学智能安全。",
     "research.title": "研究",
-    "research.sub": "点击方向，查看代表工作、我的贡献和代码。",
+    "research.sub": "点击方向，查看论文、示意图、我的贡献和代码。",
     "research.open": "查看",
     "research.contrib": "我的贡献",
     "research.works": "代表工作",
+    "research.figures": "示意图",
     "research.code": "代码与工具",
     "pub.title": "论文",
     "pub.sub": "共同一作以 * 标注。预印本链接至 arXiv 或 bioRxiv。",
@@ -73,12 +75,12 @@ const DIRECTIONS = [
       zh: "靶向免疫调控的生物大分子设计",
     },
     body: {
-      en: "Antibodies, antigens, and TCR–pHLA recognition, from sequence and structure.",
-      zh: "抗体、抗原与 TCR–pHLA 识别，从序列和结构两侧做建模与设计。",
+      en: "Antibodies, antigen presentation and screening, and RNA aptamers.",
+      zh: "抗体、抗原呈递与筛选、RNA 适配体。",
     },
     contrib: {
-      en: "Sole first author on AttABseq, a sequence-only model for antigen–antibody affinity changes (Pearson R > 0.7, no 3D structure required), and on MultiTAP, which fuses TCR–pHLA sequence and structure. Also wrote a cover review on deep-learning antibody optimization.",
-      zh: "AttABseq 独立一作：不依赖三维结构的抗原–抗体亲和力预测（Pearson R > 0.7）。MultiTAP 独立一作：融合 TCR–pHLA 的序列与结构。另有一篇深度学习抗体优化综述，为浙大学报 B 封面文章。",
+      en: "Sole first author on AttABseq (sequence-based antigen–antibody affinity) and MultiTAP (TCR–pHLA sequence and structure). RNA aptamer design is part of RNAGenesis, where I am co-first author.",
+      zh: "AttABseq 独立一作（基于序列的抗原–抗体亲和力）。MultiTAP 独立一作（TCR–pHLA 序列与结构）。RNA 适配体设计见于 RNAGenesis，我为共同一作。",
     },
     works: [
       {
@@ -92,23 +94,44 @@ const DIRECTIONS = [
         note: { en: "bioRxiv · sole first author", zh: "bioRxiv · 独立一作" },
       },
       {
-        name: "Antibody optimization review",
-        href: null,
-        note: { en: "J. Zhejiang Univ.-SCIENCE B · cover article", zh: "浙大学报 B · 封面文章" },
+        name: "RNAGenesis (RNA aptamers)",
+        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
+        note: { en: "bioRxiv · co-first, second listed", zh: "bioRxiv · 共同一作，排名第二" },
+      },
+    ],
+    figures: [
+      {
+        src: "photos/research/multitap.jpg",
+        href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193v1",
+        caption: {
+          en: "MultiTAP: TCR–peptide–HLA immunogenicity from sequence and structure.",
+          zh: "MultiTAP：融合序列与结构的 TCR–肽–HLA 免疫原性预测。",
+        },
+      },
+      {
+        src: "photos/research/rnagenesis.jpg",
+        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
+        caption: {
+          en: "RNAGenesis includes de novo RNA aptamer design alongside other functional RNAs.",
+          zh: "RNAGenesis 支持 RNA 适配体等功能性 RNA 的从头设计。",
+        },
       },
     ],
     code: [],
   },
   {
-    id: "foundation",
-    title: { en: "Scientific Foundation Models", zh: "科学基础大模型" },
+    id: "models-agents",
+    title: {
+      en: "Scientific Foundation Models and Scientific Agents",
+      zh: "科学基础大模型与科学智能体",
+    },
     body: {
-      en: "Foundation models for proteins and RNA: representation, structure, and de novo design.",
-      zh: "面向蛋白质与 RNA 的基础模型，覆盖表征、结构预测与从头设计。",
+      en: "RNAGenesis, BioLab, STELLA, and BioClaw.",
+      zh: "RNAGenesis、BioLab、STELLA 与 BioClaw。",
     },
     contrib: {
-      en: "Co-first author (second listed) on RNAGenesis, a generalist RNA foundation model, including architecture and distributed pre-training. Co-first author (second listed) on FoldMark, a watermarking method for protein generative models.",
-      zh: "RNAGenesis 共同一作（第二）：通用 RNA 基础模型，参与架构与分布式预训练。FoldMark 共同一作（第二）：蛋白质生成模型的水印与溯源。",
+      en: "Co-first author on RNAGenesis. Lead co-first author on BioLab. Sole first author on STELLA. BioClaw is the multi-channel research assistant built on this agent stack.",
+      zh: "RNAGenesis 共同一作。BioLab 共同一作（排名第一）。STELLA 独立一作。BioClaw 是基于这一智能体栈的多端科研助手。",
     },
     works: [
       {
@@ -117,53 +140,51 @@ const DIRECTIONS = [
         note: { en: "bioRxiv · co-first, second listed", zh: "bioRxiv · 共同一作，排名第二" },
       },
       {
-        name: "FoldMark",
-        href: "https://arxiv.org/abs/2410.20354",
-        note: { en: "arXiv:2410.20354 · co-first, second listed", zh: "arXiv:2410.20354 · 共同一作，排名第二" },
+        name: "BioLab",
+        href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085v1",
+        note: { en: "bioRxiv · co-first, first listed", zh: "bioRxiv · 共同一作，排名第一" },
       },
-    ],
-    code: [
-      { label: "RNAGenesis", href: "https://github.com/zaixizhang/rnagenesis" },
-      { label: "FoldMark", href: "https://github.com/zaixizhang/FoldMark" },
-    ],
-  },
-  {
-    id: "agents",
-    title: { en: "Scientific Agents", zh: "科学智能体" },
-    body: {
-      en: "Self-evolving and multi-agent systems for tool use, experiment planning, and lab execution.",
-      zh: "自进化与多智能体系统：工具编排、实验规划与实验室执行。",
-    },
-    contrib: {
-      en: "Sole first author of STELLA, a self-evolving LLM agent. Lead co-first author of BioLab, a multi-agent system with 200+ tools. Contributed the multi-agent layer of LabOS. Sole first author of Agentic-VLA. Also built BioClaw, a multi-channel bioinformatics assistant in real use.",
-      zh: "STELLA 独立一作：自进化生物医学 LLM Agent。BioLab 共同一作（排名第一）：融合 200+ 工具的多智能体系统。参与 LabOS 的多智能体交互层。Agentic-VLA 独立一作。另有多端生信助手 BioClaw 在真实科研场景中使用。",
-    },
-    works: [
       {
         name: "STELLA",
         href: "https://arxiv.org/abs/2507.02004",
         note: { en: "arXiv:2507.02004 · sole first author", zh: "arXiv:2507.02004 · 独立一作" },
       },
       {
-        name: "BioLab",
+        name: "BioClaw",
+        href: "https://bioclaw.tech/",
+        note: { en: "product · multi-channel bioinformatics assistant", zh: "产品 · 多端生信科研助手" },
+      },
+    ],
+    figures: [
+      {
+        src: "photos/research/rnagenesis.jpg",
+        href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
+        caption: {
+          en: "RNAGenesis: a generalist RNA foundation model.",
+          zh: "RNAGenesis：通用 RNA 基础模型。",
+        },
+      },
+      {
+        src: "photos/research/biolab.jpg",
         href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085v1",
-        note: { en: "bioRxiv · co-first, first listed", zh: "bioRxiv · 共同一作，排名第一" },
+        caption: {
+          en: "BioLab: multi-agent system with biological foundation models.",
+          zh: "BioLab：融合生物基础模型的多智能体系统。",
+        },
       },
       {
-        name: "LabOS",
-        href: "https://arxiv.org/abs/2510.14861",
-        note: { en: "arXiv:2510.14861", zh: "arXiv:2510.14861" },
-      },
-      {
-        name: "Agentic-VLA",
-        href: "https://arxiv.org/abs/2605.22896",
-        note: { en: "arXiv:2605.22896 · sole first author", zh: "arXiv:2605.22896 · 独立一作" },
+        src: "photos/research/stella.jpg",
+        href: "https://arxiv.org/abs/2507.02004",
+        caption: {
+          en: "STELLA: a self-evolving LLM agent for biomedical research.",
+          zh: "STELLA：面向生物医学研究的自进化智能体。",
+        },
       },
     ],
     code: [
+      { label: "RNAGenesis", href: "https://github.com/zaixizhang/rnagenesis" },
       { label: "STELLA", href: "https://github.com/zaixizhang/STELLA" },
       { label: "STELLA demo", href: "https://stella-agent.com/" },
-      { label: "LabOS", href: "https://github.com/zaixizhang/LabOS" },
       { label: "BioClaw", href: "https://bioclaw.tech/" },
     ],
   },
@@ -171,28 +192,18 @@ const DIRECTIONS = [
     id: "safety",
     title: { en: "Scientific AI Safety", zh: "科学智能安全" },
     body: {
-      en: "Red-teaming, evaluation, and alignment for models that can design or generate biology.",
-      zh: "对能够设计或生成生物分子的模型做红队测试、评测与对齐。",
+      en: "GeneBreaker and FoldMark.",
+      zh: "GeneBreaker 与 FoldMark。",
     },
     contrib: {
-      en: "Co-first author on GeneBreaker (NeurIPS 2025 BioSafeGenAI Best Paper & Oral) and JailbreakDNABench (ICLR 2026), and on SafeProtein. Co-first author on FoldMark for tracing generated protein structures. Leading organizer of the NeurIPS 2025 workshop on biosecurity safeguards for generative AI.",
-      zh: "GeneBreaker 共同一作（NeurIPS 2025 BioSafeGenAI 最佳论文与口头报告）、JailbreakDNABench 共同一作（ICLR 2026）、SafeProtein 共同一作。FoldMark 共同一作，用于蛋白质生成结果溯源。牵头组织 NeurIPS 2025 生成式 AI 生物安全研讨会。",
+      en: "Co-first author on GeneBreaker (NeurIPS 2025 BioSafeGenAI Best Paper & Oral). Co-first author on FoldMark, watermarking protein generative models.",
+      zh: "GeneBreaker 共同一作（NeurIPS 2025 BioSafeGenAI 最佳论文与口头报告）。FoldMark 共同一作：蛋白质生成模型水印。",
     },
     works: [
       {
         name: "GeneBreaker",
-        href: "https://github.com/zaixizhang/genebreaker",
-        note: { en: "NeurIPS 2025 workshop · Best Paper & Oral", zh: "NeurIPS 2025 workshop · 最佳论文与口头报告" },
-      },
-      {
-        name: "JailbreakDNABench",
-        href: null,
-        note: { en: "ICLR 2026 · co-first", zh: "ICLR 2026 · 共同一作" },
-      },
-      {
-        name: "SafeProtein",
-        href: null,
-        note: { en: "NeurIPS 2025 · co-first", zh: "NeurIPS 2025 · 共同一作" },
+        href: "https://arxiv.org/abs/2505.23839",
+        note: { en: "arXiv:2505.23839 · NeurIPS 2025 workshop Best Paper & Oral", zh: "arXiv:2505.23839 · NeurIPS 2025 workshop 最佳论文与口头报告" },
       },
       {
         name: "FoldMark",
@@ -200,7 +211,28 @@ const DIRECTIONS = [
         note: { en: "arXiv:2410.20354 · co-first, second listed", zh: "arXiv:2410.20354 · 共同一作，排名第二" },
       },
     ],
-    code: [{ label: "GeneBreaker", href: "https://github.com/zaixizhang/genebreaker" }],
+    figures: [
+      {
+        src: "photos/research/genebreaker.jpg",
+        href: "https://arxiv.org/abs/2505.23839",
+        caption: {
+          en: "GeneBreaker: pathogenicity-guided jailbreaks of DNA language models.",
+          zh: "GeneBreaker：致病性引导的 DNA 语言模型越狱评测。",
+        },
+      },
+      {
+        src: "photos/research/foldmark.jpg",
+        href: "https://arxiv.org/abs/2410.20354",
+        caption: {
+          en: "FoldMark: watermarking generated protein structures for tracing.",
+          zh: "FoldMark：为生成的蛋白质结构嵌入可溯源水印。",
+        },
+      },
+    ],
+    code: [
+      { label: "GeneBreaker", href: "https://github.com/zaixizhang/genebreaker" },
+      { label: "FoldMark", href: "https://github.com/zaixizhang/FoldMark" },
+    ],
   },
 ];
 
@@ -379,6 +411,7 @@ const HONORS = {
     "Invited as a young AI talent to the WAIC CCTV AI Gala",
     "Best Paper Award and Oral, NeurIPS 2025 Workshop on Biosecurity Safeguards for Generative AI",
     "Outstanding Graduate of Zhejiang University, 2026",
+    "Top Ten Student of the College of Life Sciences, Zhejiang University, 2026",
     "Qiushi Flying Eagle Program, 2025",
     "National Scholarship; Outstanding Graduate Student, Zhejiang University, 2024",
     "Outstanding Undergraduate Graduate, Zhejiang University, 2021",
@@ -389,6 +422,7 @@ const HONORS = {
     "作为青年 AI 人才受邀参加 WAIC 央视 AI 盛典",
     "NeurIPS 2025 Workshop: Biosecurity Safeguards for Generative AI，最佳论文奖与口头报告",
     "2026 年浙江大学校级优秀毕业生",
+    "2026 年浙江大学生命科学学院十佳大学生",
     "2025 年浙江大学“求是飞鹰计划”",
     "2024 年国家奖学金；浙江大学优秀研究生",
     "2021 年浙江大学优秀本科毕业生",
@@ -482,6 +516,19 @@ function renderPanel() {
       return `<li>${name}<span> · ${w.note[currentLang]}</span></li>`;
     })
     .join("");
+  const figs = (d.figures || [])
+    .map((f) => {
+      const cap = f.caption[currentLang];
+      const img = `<img src="${f.src}" alt="${cap}" loading="lazy" />`;
+      const linked = f.href
+        ? `<a href="${f.href}" target="_blank" rel="noopener">${img}</a>`
+        : img;
+      return `<figure>${linked}<figcaption>${cap}</figcaption></figure>`;
+    })
+    .join("");
+  const figBlock = figs
+    ? `<h4>${dict["research.figures"]}</h4><div class="fig-grid">${figs}</div>`
+    : "";
   const code =
     d.code.length === 0
       ? ""
@@ -496,6 +543,7 @@ function renderPanel() {
     <p>${d.contrib[currentLang]}</p>
     <h4>${dict["research.works"]}</h4>
     <ul class="work-list">${works}</ul>
+    ${figBlock}
     ${code}`;
 }
 
