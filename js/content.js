@@ -690,7 +690,6 @@ const EDU = {
 
 const HONORS = {
   en: [
-    "Invited as a young AI talent to the WAIC CCTV AI Gala",
     "Best Paper Award and Oral, NeurIPS 2025 Workshop on Biosecurity Safeguards for Generative AI",
     "Outstanding Graduate of Zhejiang University, 2026",
     "Top Ten Student of the College of Life Sciences, Zhejiang University, 2026",
@@ -701,7 +700,6 @@ const HONORS = {
     "Nandu Provincial Government First-Class Scholarship; Zhejiang University First-Class Scholarship, 2018–2019",
   ],
   zh: [
-    "作为青年 AI 人才受邀参加 WAIC 央视 AI 盛典",
     "NeurIPS 2025 Workshop: Biosecurity Safeguards for Generative AI，最佳论文奖与口头报告",
     "2026 年浙江大学校级优秀毕业生",
     "2026 年浙江大学生命科学学院十佳大学生",
