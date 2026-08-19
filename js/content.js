@@ -16,7 +16,6 @@ const I18N = {
     "research.title": "Research",
     "research.sub": "Three directions. Each has its own page.",
     "research.open": "Open page",
-    "selected.title": "Selected",
     "research.contrib": "My role",
     "research.works": "Papers and links",
     "research.figures": "Figures",
@@ -49,7 +48,6 @@ const I18N = {
     "research.title": "研究",
     "research.sub": "三个方向，各自独立成页。",
     "research.open": "进入页面",
-    "selected.title": "代表工作",
     "research.contrib": "我的贡献",
     "research.works": "论文与链接",
     "research.figures": "示意图",
@@ -77,23 +75,18 @@ const DIRECTIONS = [
       zh: "靶向免疫调控的生物大分子设计",
     },
     body: {
-      en: "OpenIO (Cancer Cell), antibodies, antigen presentation and screening, and RNA aptamers.",
-      zh: "OpenIO（Cancer Cell）、抗体、抗原呈递与筛选、RNA 适配体。",
+      en: "Antibodies, antigen presentation and screening, and RNA aptamers.",
+      zh: "抗体、抗原呈递与筛选、RNA 适配体。",
     },
     contrib: {
-      en: "Co-author of OpenIO (Cancer Cell commentary). Sole first author on AttABseq (sequence-based antigen–antibody affinity) and MultiTAP (TCR–peptide–HLA immunogenicity). RNA aptamer design is part of RNAGenesis, where I am co-first author.",
-      zh: "OpenIO 共同作者（Cancer Cell commentary）。AttABseq 独立一作（基于序列的抗原–抗体亲和力）。MultiTAP 独立一作（TCR–肽–HLA 免疫原性）。RNA 适配体设计见于 RNAGenesis，我为共同一作。",
+      en: "Sole first author on AttABseq (sequence-based antigen–antibody affinity) and MultiTAP (TCR–peptide–HLA immunogenicity). RNA aptamer design is part of RNAGenesis, where I am co-first author.",
+      zh: "AttABseq 独立一作（基于序列的抗原–抗体亲和力）。MultiTAP 独立一作（TCR–肽–HLA 免疫原性）。RNA 适配体设计见于 RNAGenesis，我为共同一作。",
     },
     story: {
       en: "The current MultiTAP version is not the 2024 bioRxiv figure. It encodes paired TCR CDR3αβ, peptide and full-length HLA sequence with ESM-2 and a TCR masked language model, builds residue-level graphs on Boltz2 pHLA structures, and uses bidirectional sequence and structure cross-attention. On independent tests it ranks first among seven baselines (AUC 0.890, AUPR 0.723).",
       zh: "当前 MultiTAP 不是 2024 年 bioRxiv 预印本中的那张图。它用 ESM-2 与 TCR 掩码语言模型编码配对 CDR3αβ、肽段与 HLA 全长序列，在 Boltz2 预测的 pHLA 结构上做残基级图编码，再用序列与结构的双向交叉注意力。独立测试中在七个基线里全面领先（AUC 0.890，AUPR 0.723）。",
     },
     works: [
-      {
-        name: "OpenIO",
-        href: "https://doi.org/10.1016/j.ccell.2026.06.002",
-        note: { en: "Cancer Cell · commentary · co-author", zh: "Cancer Cell · commentary · 共同作者" },
-      },
       {
         name: "AttABseq",
         href: "https://doi.org/10.1093/bib/bbae304",
@@ -465,12 +458,4 @@ const HOBBIES = {
   en: ["Music", "Hiking", "Reading", "Travel"],
   zh: ["音乐", "徒步", "阅读", "旅行"],
 };
-
-const SELECTED = [
-  {
-    title: "OpenIO: An open framework for AI-native immunotherapy",
-    venue: { en: "Cancer Cell, 2026", zh: "Cancer Cell，2026" },
-    href: "https://doi.org/10.1016/j.ccell.2026.06.002",
-  },
-];
 

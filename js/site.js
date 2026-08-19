@@ -94,12 +94,6 @@ function pageTitle(lang) {
 
 function renderHome(lang) {
   const dict = I18N[lang];
-  const selected = document.getElementById("selected-list");
-  if (selected) {
-    selected.innerHTML = SELECTED.map(
-      (p) => `<li><a href="${p.href}" target="_blank" rel="noopener">${p.title}</a><span> · ${p.venue[lang]}</span></li>`
-    ).join("");
-  }
   const grid = document.getElementById("research-grid");
   if (!grid) return;
   grid.innerHTML = DIRECTIONS.map(
