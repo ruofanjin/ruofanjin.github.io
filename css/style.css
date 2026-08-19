@@ -214,6 +214,8 @@ html[lang="zh-CN"] .hero h1 { letter-spacing: 0.12em; }
   color: var(--muted);
   padding: 4px 0;
 }
+.news-bar li a { font-weight: 600; }
+.news-bar li span { color: var(--muted); }
 
 .section {
   max-width: var(--max);
