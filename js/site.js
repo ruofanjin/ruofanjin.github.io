@@ -180,6 +180,7 @@ function applyLang(lang) {
   if (PAGE === "about") {
     renderTimeline(document.getElementById("edu-list"), EDU[lang]);
     renderPlain(document.getElementById("honor-list"), HONORS[lang]);
+    renderPlain(document.getElementById("hobby-list"), HOBBIES[lang]);
   }
   localStorage.setItem("lang", lang);
 }

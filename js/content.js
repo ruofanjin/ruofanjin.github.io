@@ -26,6 +26,7 @@ const I18N = {
     "pub.published": "Published",
     "edu.title": "Education",
     "honors.title": "Honors",
+    "hobbies.title": "Hobbies",
     "contact.title": "Contact",
     "contact.affil": "Assistant Professor, Zhongguancun Academy, Beijing",
     "about.title": "About",
@@ -57,6 +58,7 @@ const I18N = {
     "pub.published": "已发表",
     "edu.title": "教育经历",
     "honors.title": "获得荣誉",
+    "hobbies.title": "兴趣爱好",
     "contact.title": "联系方式",
     "contact.affil": "助理教授，北京中关村学院",
     "about.title": "关于",
@@ -450,5 +452,8 @@ const HONORS = {
   ],
 };
 
-const HOBBIES = { en: [], zh: [] };
+const HOBBIES = {
+  en: ["Music", "Hiking", "Reading", "Travel"],
+  zh: ["音乐", "徒步", "阅读", "旅行"],
+};
 
