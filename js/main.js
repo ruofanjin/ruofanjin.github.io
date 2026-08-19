@@ -11,7 +11,7 @@ const I18N = {
     "hero.role": "Assistant Professor",
     "hero.affil": "Zhongguancun Academy · Beijing",
     "hero.lead":
-      "How much of scientific discovery can AI carry out on its own? I build self-evolving agents that plan their own experiments, orchestrate hundreds of computational tools, and close the loop from prediction to the wet lab — together with the protein and RNA foundation models they reason over. And because a model that can design biology can also be misused, I work just as much on red-teaming and alignment for these models.",
+      "I work on biomolecular design for targeted immune regulation, scientific foundation models, scientific agents, and scientific AI safety.",
     "news.label": "Recent",
     "news.1": "Aug 2026 — Joined Zhongguancun Academy as Assistant Professor.",
     "news.2": "Jun 2026 — Ph.D. in Biophysics, Zhejiang University.",
@@ -25,19 +25,19 @@ const I18N = {
     "about.students":
       "I am looking for motivated students and collaborators in AI for Science, agents, and biomolecular design.",
     "research.title": "Research",
-    "research.sub": "Four connected questions around using AI agents to accelerate science.",
-    "r1.title": "AI for Science & LLM Agents",
+    "research.sub": "Current research interests.",
+    "r1.title": "Biomolecular Design for Targeted Immune Regulation",
     "r1.body":
-      "Self-evolving and multi-agent systems that plan, tool-use, and close the loop from computation to experiment.",
-    "r2.title": "Protein / RNA Foundation Models",
+      "Antibodies, antigens, and TCR–pHLA recognition, modeled and designed from both sequence and structure.",
+    "r2.title": "Scientific Foundation Models",
     "r2.body":
-      "Large-scale models for sequence–structure generation and de novo design of functional biomolecules.",
-    "r3.title": "Computational Immunology",
+      "Foundation models for proteins and RNA, spanning representation, structure prediction, and de novo design.",
+    "r3.title": "Scientific Agents",
     "r3.body":
-      "Sequence- and structure-aware models for antibody affinity, tumor antigens, and AI-assisted discovery.",
-    "r4.title": "Biosafety of Generative AI",
+      "Self-evolving and multi-agent systems for tool orchestration, experiment planning, and lab execution.",
+    "r4.title": "Scientific AI Safety",
     "r4.body":
-      "Red-teaming, evaluation, and alignment for DNA and protein language models under dual-use risk.",
+      "Red-teaming, evaluation, and alignment for models that can design or generate biology.",
     "pub.title": "Publications",
     "pub.sub": "Equal contribution is marked with *. Preprints link to arXiv or bioRxiv.",
     "pub.review": "Preprints",
@@ -62,7 +62,7 @@ const I18N = {
     "hero.role": "助理教授",
     "hero.affil": "北京中关村学院",
     "hero.lead":
-      "科学发现中，有多少可以交给 AI 自己完成？我构建能够自我进化的智能体——它们自主规划实验、编排数百个计算工具，把从计算预测到湿实验验证的链条连成闭环；同时研发它们赖以推理的蛋白质与 RNA 基础模型。而能够设计生物分子的模型同样可能被滥用，因此我把同等的精力，放在这类模型的红队测试与安全对齐上。",
+      "我关注靶向免疫调控的生物大分子设计、科学基础大模型、科学智能体，以及科学智能安全。",
     "news.label": "近况",
     "news.1": "2026 年 8 月 — 全职入职北京中关村学院，任助理教授。",
     "news.2": "2026 年 6 月 — 于浙江大学获生物物理学博士学位。",
@@ -75,15 +75,15 @@ const I18N = {
       "研究主线是用 AI 智能体加速科学发现：自进化大模型智能体（STELLA）、多智能体实验系统（BioLab、LabOS）、RNA/蛋白质基础模型（RNAGenesis）、计算免疫学（AttABseq、MultiTAP），以及生成式模型的生物安全评测（GeneBreaker、JailbreakDNABench、SafeProtein）。我也把算法做成科研人员可以使用的工具，包括 BioClaw。",
     "about.students": "课题组欢迎对 AI for Science、智能体与生物大分子设计感兴趣的同学与合作者。",
     "research.title": "研究",
-    "research.sub": "围绕“用 AI 智能体加速科学发现”展开的四个方向。",
-    "r1.title": "AI for Science 与大模型智能体",
-    "r1.body": "自进化与多智能体系统：规划、工具调用，以及从计算到实验的闭环。",
-    "r2.title": "蛋白质 / RNA 基础模型",
-    "r2.body": "面向序列–结构生成与功能性生物大分子从头设计的大规模模型。",
-    "r3.title": "计算免疫学",
-    "r3.body": "融合序列与结构的抗体亲和力、肿瘤抗原预测与 AI 辅助发现。",
-    "r4.title": "生成式 AI 的生物安全",
-    "r4.body": "针对 DNA 与蛋白质语言模型的红队测试、评测与对齐。",
+    "research.sub": "目前关注的方向。",
+    "r1.title": "靶向免疫调控的生物大分子设计",
+    "r1.body": "抗体、抗原与 TCR–pHLA 识别，从序列和结构两侧做建模与设计。",
+    "r2.title": "科学基础大模型",
+    "r2.body": "面向蛋白质与 RNA 的基础模型，覆盖表征、结构预测与从头设计。",
+    "r3.title": "科学智能体",
+    "r3.body": "自进化与多智能体系统：工具编排、实验规划与实验室执行。",
+    "r4.title": "科学智能安全",
+    "r4.body": "对能够设计或生成生物分子的模型做红队测试、评测与对齐。",
     "pub.title": "论文",
     "pub.sub": "共同一作以 * 标注。预印本链接至 arXiv 或 bioRxiv。",
     "pub.review": "预印本",
@@ -111,7 +111,7 @@ const PUBS_REVIEW = [
     authors:
       "<b>Ruofan Jin</b>, Yucheng Guo, Yuanhao Qu, Ming Yang, Chun Shang, Qirong Yang, Linlin Chao, Yi Zhou, Ruilai Xu, Ziyao Xu, Ruhong Zhou, Zaixi Zhang, Mengdi Wang, Xiaoming Zhang, Le Cong",
     venue: "bioRxiv 2025.09.03.674085",
-    href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085",
+    href: "https://www.biorxiv.org/content/10.1101/2025.09.03.674085v1",
   },
   {
     title:
@@ -119,7 +119,7 @@ const PUBS_REVIEW = [
     authors:
       "<b>Ruofan Jin</b>, Jingxuan Ge, Guanqiao Zhang, Ziyan Deng, Kim Hsieh, Tingjun Hou, Ruhong Zhou",
     venue: "bioRxiv 2024.11.06.622193",
-    href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193",
+    href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193v1",
   },
   {
     title: "Agentic-VLA: Efficient Online Adaptation for Vision-Language-Action Models",
@@ -132,7 +132,7 @@ const PUBS_REVIEW = [
     authors:
       "Zaixi Zhang, <b>Ruofan Jin</b>, Linlin Chao, Guangxue Xu, Yikun Zhang, Guowei Zhou, Di Yin, Yingqing Guo, Yaqi Fu, Yukang Yang, Kaixuan Huang, Xiaotong Wang, Junze Zhang, Yujie Yang, Qirong Yang, Ziyao Xu, Weinan E, Ruhong Zhou, Xiaoming Zhang, Mengdi Wang, Le Cong",
     venue: "bioRxiv 2024.12.30.630826",
-    href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826",
+    href: "https://www.biorxiv.org/content/10.1101/2024.12.30.630826v3",
   },
   {
     title: "FoldMark: Protecting Protein Generative Models with Watermarking",
