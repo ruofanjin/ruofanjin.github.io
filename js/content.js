@@ -3,12 +3,10 @@ const I18N = {
     "brand.name": "Ruofan Jin",
     "hero.name": "Ruofan Jin",
     "hero.photoAlt": "Portrait of Ruofan Jin",
+    "nav.home": "Home",
     "nav.research": "Research",
-    "nav.publications": "Papers",
-    "nav.education": "Education",
-    "nav.honors": "Honors",
-    "nav.hobbies": "Hobbies",
-    "nav.contact": "Contact",
+    "nav.papers": "Papers",
+    "nav.about": "About",
     "hero.role": "Assistant Professor",
     "hero.affil": "Zhongguancun Academy · Beijing",
     "hero.bio":
@@ -16,10 +14,10 @@ const I18N = {
     "hero.lead":
       "I work on biomolecular design for targeted immune regulation; scientific foundation models and scientific agents; and scientific AI safety.",
     "research.title": "Research",
-    "research.sub": "Click a direction for papers, figures, my role, and code.",
-    "research.open": "Open",
+    "research.sub": "Three directions. Each has its own page.",
+    "research.open": "Open page",
     "research.contrib": "My role",
-    "research.works": "Representative work",
+    "research.works": "Papers and links",
     "research.figures": "Figures",
     "research.code": "Code & tools",
     "pub.title": "Papers",
@@ -28,20 +26,18 @@ const I18N = {
     "pub.published": "Published",
     "edu.title": "Education",
     "honors.title": "Honors",
-    "hobbies.title": "Hobbies",
     "contact.title": "Contact",
     "contact.affil": "Assistant Professor, Zhongguancun Academy, Beijing",
+    "about.title": "About",
   },
   zh: {
     "brand.name": "金若凡",
     "hero.name": "金若凡",
     "hero.photoAlt": "金若凡半身照",
+    "nav.home": "首页",
     "nav.research": "研究",
-    "nav.publications": "论文",
-    "nav.education": "教育",
-    "nav.honors": "荣誉",
-    "nav.hobbies": "爱好",
-    "nav.contact": "联系",
+    "nav.papers": "论文",
+    "nav.about": "关于",
     "hero.role": "助理教授",
     "hero.affil": "北京中关村学院",
     "hero.bio":
@@ -49,10 +45,10 @@ const I18N = {
     "hero.lead":
       "我关注靶向免疫调控的生物大分子设计、科学基础大模型与科学智能体，以及科学智能安全。",
     "research.title": "研究",
-    "research.sub": "点击方向，查看论文、示意图、我的贡献和代码。",
-    "research.open": "查看",
+    "research.sub": "三个方向，各自独立成页。",
+    "research.open": "进入页面",
     "research.contrib": "我的贡献",
-    "research.works": "代表工作",
+    "research.works": "论文与链接",
     "research.figures": "示意图",
     "research.code": "代码与工具",
     "pub.title": "论文",
@@ -61,15 +57,17 @@ const I18N = {
     "pub.published": "已发表",
     "edu.title": "教育经历",
     "honors.title": "获得荣誉",
-    "hobbies.title": "兴趣爱好",
     "contact.title": "联系方式",
     "contact.affil": "助理教授，北京中关村学院",
+    "about.title": "关于",
   },
 };
 
 const DIRECTIONS = [
   {
     id: "immune",
+    page: "research/immune.html",
+    nav: { en: "Immune regulation", zh: "免疫调控" },
     title: {
       en: "Biomolecular Design for Targeted Immune Regulation",
       zh: "靶向免疫调控的生物大分子设计",
@@ -79,8 +77,12 @@ const DIRECTIONS = [
       zh: "抗体、抗原呈递与筛选、RNA 适配体。",
     },
     contrib: {
-      en: "Sole first author on AttABseq (sequence-based antigen–antibody affinity) and MultiTAP (TCR–pHLA sequence and structure). RNA aptamer design is part of RNAGenesis, where I am co-first author.",
-      zh: "AttABseq 独立一作（基于序列的抗原–抗体亲和力）。MultiTAP 独立一作（TCR–pHLA 序列与结构）。RNA 适配体设计见于 RNAGenesis，我为共同一作。",
+      en: "Sole first author on AttABseq (sequence-based antigen–antibody affinity) and MultiTAP (TCR–peptide–HLA immunogenicity). RNA aptamer design is part of RNAGenesis, where I am co-first author.",
+      zh: "AttABseq 独立一作（基于序列的抗原–抗体亲和力）。MultiTAP 独立一作（TCR–肽–HLA 免疫原性）。RNA 适配体设计见于 RNAGenesis，我为共同一作。",
+    },
+    story: {
+      en: "The current MultiTAP version is not the 2024 bioRxiv figure. It encodes paired TCR CDR3αβ, peptide and full-length HLA sequence with ESM-2 and a TCR masked language model, builds residue-level graphs on Boltz2 pHLA structures, and uses bidirectional sequence and structure cross-attention. On independent tests it ranks first among seven baselines (AUC 0.890, AUPR 0.723).",
+      zh: "当前 MultiTAP 不是 2024 年 bioRxiv 预印本中的那张图。它用 ESM-2 与 TCR 掩码语言模型编码配对 CDR3αβ、肽段与 HLA 全长序列，在 Boltz2 预测的 pHLA 结构上做残基级图编码，再用序列与结构的双向交叉注意力。独立测试中在七个基线里全面领先（AUC 0.890，AUPR 0.723）。",
     },
     works: [
       {
@@ -91,7 +93,7 @@ const DIRECTIONS = [
       {
         name: "MultiTAP",
         href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193v1",
-        note: { en: "bioRxiv · sole first author", zh: "bioRxiv · 独立一作" },
+        note: { en: "bioRxiv preprint · sole first author; figures below are the updated manuscript", zh: "bioRxiv 预印本 · 独立一作；下方配图为更新后的稿件" },
       },
       {
         name: "RNAGenesis (RNA aptamers)",
@@ -102,10 +104,16 @@ const DIRECTIONS = [
     figures: [
       {
         src: "photos/research/multitap.jpg",
-        href: "https://www.biorxiv.org/content/10.1101/2024.11.06.622193v1",
         caption: {
-          en: "MultiTAP: TCR–peptide–HLA immunogenicity from sequence and structure.",
-          zh: "MultiTAP：融合序列与结构的 TCR–肽–HLA 免疫原性预测。",
+          en: "MultiTAP framework: ESM-2 and TCR MLM embeddings, graph encoding of Boltz2 pHLA structures, and bidirectional sequence/structure cross-attention.",
+          zh: "MultiTAP 框架：ESM-2 与 TCR 掩码语言模型嵌入、Boltz2 预测的 pHLA 结构图编码，以及序列/结构双向交叉注意力。",
+        },
+      },
+      {
+        src: "photos/research/multitap-ablation.jpg",
+        caption: {
+          en: "TPHD construction, Boltz2 pHLA structures, and ablation. Full MultiTAP (sequence + structure) leads on AUC, AUPR, Precision, F1, and MCC.",
+          zh: "TPHD 数据集、Boltz2 pHLA 结构，以及消融实验。完整 MultiTAP（序列+结构）在 AUC、AUPR、Precision、F1、MCC 上均为最高。",
         },
       },
       {
@@ -121,6 +129,8 @@ const DIRECTIONS = [
   },
   {
     id: "models-agents",
+    page: "research/models.html",
+    nav: { en: "Models & agents", zh: "大模型与智能体" },
     title: {
       en: "Scientific Foundation Models and Scientific Agents",
       zh: "科学基础大模型与科学智能体",
@@ -132,6 +142,10 @@ const DIRECTIONS = [
     contrib: {
       en: "Co-first author on RNAGenesis. Lead co-first author on BioLab. Sole first author on STELLA. BioClaw is the multi-channel research assistant built on this agent stack.",
       zh: "RNAGenesis 共同一作。BioLab 共同一作（排名第一）。STELLA 独立一作。BioClaw 是基于这一智能体栈的多端科研助手。",
+    },
+    story: {
+      en: "RNAGenesis is a generalist RNA foundation model. BioLab is a multi-agent system that calls biological foundation models and tools. STELLA is a self-evolving LLM agent for biomedical research. BioClaw is the product layer on top of this stack.",
+      zh: "RNAGenesis 是通用 RNA 基础模型。BioLab 是调用生物基础模型与工具的多智能体系统。STELLA 是面向生物医学研究的自进化智能体。BioClaw 是这一栈上的产品层。",
     },
     works: [
       {
@@ -190,6 +204,8 @@ const DIRECTIONS = [
   },
   {
     id: "safety",
+    page: "research/safety.html",
+    nav: { en: "Scientific AI safety", zh: "科学智能安全" },
     title: { en: "Scientific AI Safety", zh: "科学智能安全" },
     body: {
       en: "GeneBreaker and FoldMark.",
@@ -198,6 +214,10 @@ const DIRECTIONS = [
     contrib: {
       en: "Co-first author on GeneBreaker (NeurIPS 2025 BioSafeGenAI Best Paper & Oral). Co-first author on FoldMark, watermarking protein generative models.",
       zh: "GeneBreaker 共同一作（NeurIPS 2025 BioSafeGenAI 最佳论文与口头报告）。FoldMark 共同一作：蛋白质生成模型水印。",
+    },
+    story: {
+      en: "GeneBreaker is a pathogenicity-guided jailbreak evaluation of DNA language models. FoldMark watermarks generated protein structures so they can be traced.",
+      zh: "GeneBreaker 是致病性引导的 DNA 语言模型越狱评测。FoldMark 为生成的蛋白质结构嵌入可溯源水印。",
     },
     works: [
       {
@@ -235,7 +255,6 @@ const DIRECTIONS = [
     ],
   },
 ];
-
 const PUBS_REVIEW = [
   {
     title: "STELLA: Self-Evolving LLM Agent for Biomedical Research",
@@ -433,172 +452,3 @@ const HONORS = {
 
 const HOBBIES = { en: [], zh: [] };
 
-let currentLang = "en";
-let openDir = null;
-
-function renderPubs(target, items) {
-  target.innerHTML = items
-    .map((p) => {
-      const title = p.href
-        ? `<a class="title" href="${p.href}" target="_blank" rel="noopener">${p.title}</a>`
-        : `<span class="title">${p.title}</span>`;
-      const venue = p.href
-        ? `<a class="venue" href="${p.href}" target="_blank" rel="noopener">${p.venue}</a>`
-        : `<span class="venue">${p.venue}</span>`;
-      const badge = p.badge ? `<span class="badge">${p.badge}</span>` : "";
-      const note = p.note ? ` · ${p.note}` : "";
-      return `<li><div>
-        ${title}
-        <div class="meta">${p.authors}</div>
-        <div class="meta">${venue}${note}${badge}</div>
-      </div></li>`;
-    })
-    .join("");
-}
-
-function renderTimeline(target, items) {
-  target.innerHTML = items
-    .map(
-      (e) => `<li>
-        <span class="when">${e.when}</span>
-        <span class="what">${e.what}</span>
-        <div class="where">${e.where}</div>
-      </li>`
-    )
-    .join("");
-}
-
-function renderPlain(target, items) {
-  target.innerHTML = items.map((t) => `<li>${t}</li>`).join("");
-}
-
-function renderDirections() {
-  const lang = currentLang;
-  const dict = I18N[lang];
-  const grid = document.getElementById("research-grid");
-  grid.innerHTML = DIRECTIONS.map(
-    (d) => `<button class="research-card${openDir === d.id ? " is-open" : ""}" type="button" data-id="${d.id}">
-      <h3>${d.title[lang]}</h3>
-      <p>${d.body[lang]}</p>
-      <span class="card-hint">${dict["research.open"]}</span>
-    </button>`
-  ).join("");
-  grid.querySelectorAll(".research-card").forEach((btn) => {
-    btn.addEventListener("click", () => toggleDirection(btn.dataset.id));
-  });
-  renderPanel();
-}
-
-function toggleDirection(id) {
-  openDir = openDir === id ? null : id;
-  renderDirections();
-  if (openDir) {
-    const panel = document.getElementById("research-panel");
-    panel.hidden = false;
-    panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  }
-}
-
-function renderPanel() {
-  const panel = document.getElementById("research-panel");
-  const dict = I18N[currentLang];
-  const d = DIRECTIONS.find((x) => x.id === openDir);
-  if (!d) {
-    panel.hidden = true;
-    panel.innerHTML = "";
-    return;
-  }
-  const works = d.works
-    .map((w) => {
-      const name = w.href
-        ? `<a href="${w.href}" target="_blank" rel="noopener">${w.name}</a>`
-        : w.name;
-      return `<li>${name}<span> · ${w.note[currentLang]}</span></li>`;
-    })
-    .join("");
-  const figs = (d.figures || [])
-    .map((f) => {
-      const cap = f.caption[currentLang];
-      const img = `<img src="${f.src}" alt="${cap}" loading="lazy" />`;
-      const linked = f.href
-        ? `<a href="${f.href}" target="_blank" rel="noopener">${img}</a>`
-        : img;
-      return `<figure>${linked}<figcaption>${cap}</figcaption></figure>`;
-    })
-    .join("");
-  const figBlock = figs
-    ? `<h4>${dict["research.figures"]}</h4><div class="fig-grid">${figs}</div>`
-    : "";
-  const code =
-    d.code.length === 0
-      ? ""
-      : `<h4>${dict["research.code"]}</h4>
-         <p class="code-links">${d.code
-           .map((c) => `<a href="${c.href}" target="_blank" rel="noopener">${c.label}</a>`)
-           .join("")}</p>`;
-  panel.hidden = false;
-  panel.innerHTML = `
-    <h3>${d.title[currentLang]}</h3>
-    <h4>${dict["research.contrib"]}</h4>
-    <p>${d.contrib[currentLang]}</p>
-    <h4>${dict["research.works"]}</h4>
-    <ul class="work-list">${works}</ul>
-    ${figBlock}
-    ${code}`;
-}
-
-function renderHobbies(lang) {
-  const section = document.getElementById("hobbies");
-  const items = HOBBIES[lang] || [];
-  const navLink = document.querySelector('.nav a[href="#hobbies"]');
-  if (!items.length) {
-    section.hidden = true;
-    if (navLink) navLink.hidden = true;
-    return;
-  }
-  section.hidden = false;
-  if (navLink) navLink.hidden = false;
-  renderPlain(document.getElementById("hobby-list"), items);
-}
-
-function applyLang(lang) {
-  currentLang = lang;
-  const dict = I18N[lang];
-  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (dict[key] !== undefined) el.innerHTML = dict[key];
-  });
-  document.getElementById("langToggle").textContent = lang === "zh" ? "EN" : "中文";
-  document.title = lang === "zh" ? "金若凡" : "Ruofan Jin";
-  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
-    const key = el.getAttribute("data-i18n-alt");
-    if (dict[key] !== undefined) el.setAttribute("alt", dict[key]);
-  });
-  renderDirections();
-  renderTimeline(document.getElementById("edu-list"), EDU[lang]);
-  renderPlain(document.getElementById("honor-list"), HONORS[lang]);
-  renderHobbies(lang);
-  localStorage.setItem("lang", lang);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
-  renderPubs(document.getElementById("pubs-review"), PUBS_REVIEW);
-  renderPubs(document.getElementById("pubs-published"), PUBS_PUBLISHED);
-
-  const lang = localStorage.getItem("lang") || "en";
-  applyLang(lang);
-
-  document.getElementById("langToggle").addEventListener("click", () => {
-    applyLang(currentLang === "zh" ? "en" : "zh");
-  });
-
-  const nav = document.getElementById("nav");
-  document.getElementById("menuToggle").addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
-  nav.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => nav.classList.remove("open"))
-  );
-});

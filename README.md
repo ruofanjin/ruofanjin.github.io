@@ -1,6 +1,13 @@
 # Ruofan Jin · Personal Homepage
 
-静态学术主页，可直接用浏览器打开，或部署到 GitHub Pages / 任意静态托管。
+静态学术主页，可部署到 GitHub Pages。
+
+- `index.html` 首页
+- `research/immune.html` 靶向免疫调控
+- `research/models.html` 科学基础大模型与智能体
+- `research/safety.html` 科学智能安全
+- `papers.html` 论文
+- `about.html` 教育、荣誉、联系
 
 ## 本地预览
 

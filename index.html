@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-root="" data-page="home">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ruofan Jin · 金若凡</title>
+  <title>Ruofan Jin</title>
   <meta name="description" content="Ruofan Jin is an Assistant Professor at Zhongguancun Academy. Research: biomolecular design for targeted immune regulation; scientific foundation models and scientific agents; and scientific AI safety." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,21 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect fill='%230c0c0d' width='64' height='64'/><text x='50%' y='54%' text-anchor='middle' fill='%23f4f0e8' font-family='Georgia' font-size='28'>RJ</text></svg>" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" data-i18n="brand.name">Ruofan Jin</a>
-    <nav class="nav" id="nav">
-      <a href="#research" data-i18n="nav.research">Research</a>
-      <a href="#publications" data-i18n="nav.publications">Papers</a>
-      <a href="#education" data-i18n="nav.education">Education</a>
-      <a href="#honors" data-i18n="nav.honors">Honors</a>
-      <a href="#hobbies" data-i18n="nav.hobbies" hidden>Hobbies</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
-    </nav>
-    <div class="header-actions">
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">中文</button>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu">Menu</button>
-    </div>
-  </header>
+  <header class="site-header" id="site-header"></header>
 
   <main id="top">
     <section class="hero">
@@ -52,65 +38,17 @@
     <section id="research" class="section">
       <div class="section-head">
         <h2 data-i18n="research.title">Research</h2>
-        <p data-i18n="research.sub">Click a direction for papers, figures, my role, and code.</p>
+        <p data-i18n="research.sub">Three directions. Each has its own page.</p>
       </div>
       <div class="research-grid" id="research-grid"></div>
-      <div class="research-panel" id="research-panel" hidden></div>
-    </section>
-
-    <section id="publications" class="section section-alt">
-      <div class="section-head">
-        <h2 data-i18n="pub.title">Papers</h2>
-        <p data-i18n="pub.sub">Equal contribution is marked with *. Preprints link to arXiv or bioRxiv.</p>
-      </div>
-      <h3 class="list-label" data-i18n="pub.review">Preprints</h3>
-      <ol class="pubs" id="pubs-review"></ol>
-      <h3 class="list-label" data-i18n="pub.published">Published</h3>
-      <ol class="pubs" id="pubs-published"></ol>
-    </section>
-
-    <section id="education" class="section">
-      <div class="section-head">
-        <h2 data-i18n="edu.title">Education</h2>
-      </div>
-      <ul class="timeline" id="edu-list"></ul>
-    </section>
-
-    <section id="honors" class="section section-alt">
-      <div class="section-head">
-        <h2 data-i18n="honors.title">Honors</h2>
-      </div>
-      <ul class="plain" id="honor-list"></ul>
-    </section>
-
-    <section id="hobbies" class="section" hidden>
-      <div class="section-head">
-        <h2 data-i18n="hobbies.title">Hobbies</h2>
-      </div>
-      <ul class="plain" id="hobby-list"></ul>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="section-head">
-        <h2 data-i18n="contact.title">Contact</h2>
-      </div>
-      <div class="contact-row">
-        <p>
-          <a href="mailto:rufeeking0105@gmail.com">rufeeking0105@gmail.com</a><br />
-          <span data-i18n="contact.affil">Assistant Professor, Zhongguancun Academy, Beijing</span>
-        </p>
-        <p class="contact-links">
-          <a href="https://scholar.google.com/citations?user=nG5izwYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="https://bioclaw.tech/" target="_blank" rel="noopener">BioClaw</a>
-        </p>
-      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> <span data-i18n="brand.name">Ruofan Jin</span></p>
+    <p>© <span id="year"></span> <span id="footer-name">Ruofan Jin</span></p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
