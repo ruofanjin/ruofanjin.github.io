@@ -74,7 +74,7 @@ const DIRECTIONS = [
     nav: { en: "Immune regulation", zh: "免疫调控" },
     title: {
       en: "Biomolecular Design for Targeted Immune Regulation",
-      zh: "靶向免疫调控的生物大分子设计",
+      zh: "靶向免疫调控生物大分子设计",
     },
     body: {
       en: "Antibodies, antigen presentation and screening, and RNA aptamers.",
