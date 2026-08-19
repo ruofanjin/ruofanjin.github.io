@@ -24,6 +24,7 @@ const I18N = {
     "pub.sub": "Equal contribution is marked with *. Preprints link to arXiv or bioRxiv. Published papers are ordered by first-author role, then Google Scholar citations.",
     "pub.review": "Preprints",
     "pub.published": "Published",
+    "pub.scholar": "Google Scholar",
     "edu.title": "Education",
     "honors.title": "Honors",
     "hobbies.title": "Hobbies",
@@ -56,6 +57,7 @@ const I18N = {
     "pub.sub": "共同一作以 * 标注。预印本链接至 arXiv 或 bioRxiv。已发表论文按独立一作、共同一作、其他作者排序，同组内按 Google Scholar 引用从高到低。",
     "pub.review": "待发表",
     "pub.published": "已发表",
+    "pub.scholar": "Google Scholar",
     "edu.title": "教育经历",
     "honors.title": "获得荣誉",
     "hobbies.title": "兴趣爱好",
@@ -368,23 +370,6 @@ const PUBS_PUBLISHED = [
     venue: "Journal of Chemical Information and Modeling",
     note: "10 citations",
     href: "https://doi.org/10.1021/acs.jcim.3c00579",
-  },
-  {
-    title:
-      "Highly accurate and efficient deep learning paradigm for full-atom protein loop modeling with KarmaLoop",
-    authors:
-      "Tianyue Wang, Xunjun Zhang, Odin Zhang, et al., <b>Ruofan Jin</b>, … Chang-yu Hsieh*, Tingjun Hou*",
-    venue: "Research",
-    note: "7 citations",
-    href: "https://doi.org/10.34133/research.0408",
-  },
-  {
-    title: "OpenIO: An open framework for AI-native immunotherapy",
-    authors:
-      "Yingcheng Wu, Hao Xiao, Nan Jiang, Will Hua, Jiaqiang Ma, Jiacheng Ge, Yong Liu, Zhongyue Zhang, Jack Xiaoyu Chen, <b>Ruofan Jin</b>, Yingrui Wang, Jian Zhou, Jia Fan, Zaixiang Zheng, Lei Bai, Haifeng Ye, Qi Liu, Guoji Guo, Zaixi Zhang, Siqi Sun, Tiannan Guo, Shuangjia Zheng, Qiang Gao",
-    venue: "Cancer Cell",
-    note: "2026 · 44(7): 1315–1320 · commentary · 1 citation",
-    href: "https://doi.org/10.1016/j.ccell.2026.06.002",
   },
 ];
 

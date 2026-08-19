@@ -343,11 +343,13 @@ a.research-card:hover {
   margin-top: 4px;
 }
 
-.page {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 48px 28px 80px;
-  min-height: 70vh;
+.scholar-more {
+  margin: 36px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.scholar-more a {
+  font-size: 16px;
 }
 .article h1 {
   margin: 0 0 12px;
