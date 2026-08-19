@@ -21,7 +21,7 @@ const I18N = {
     "research.figures": "Figures",
     "research.code": "Code & tools",
     "pub.title": "Papers",
-    "pub.sub": "Equal contribution is marked with *. Preprints link to arXiv or bioRxiv.",
+    "pub.sub": "Equal contribution is marked with *. Preprints link to arXiv or bioRxiv. Published papers are ordered by first-author role, then Google Scholar citations.",
     "pub.review": "Preprints",
     "pub.published": "Published",
     "edu.title": "Education",
@@ -53,7 +53,7 @@ const I18N = {
     "research.figures": "示意图",
     "research.code": "代码与工具",
     "pub.title": "论文",
-    "pub.sub": "共同一作以 * 标注。预印本链接至 arXiv 或 bioRxiv。",
+    "pub.sub": "共同一作以 * 标注。预印本链接至 arXiv 或 bioRxiv。已发表论文按独立一作、共同一作、其他作者排序，同组内按 Google Scholar 引用从高到低。",
     "pub.review": "待发表",
     "pub.published": "已发表",
     "edu.title": "教育经历",
@@ -305,20 +305,12 @@ const PUBS_REVIEW = [
 
 const PUBS_PUBLISHED = [
   {
-    title: "OpenIO: An open framework for AI-native immunotherapy",
-    authors:
-      "Yingcheng Wu, Hao Xiao, Nan Jiang, Will Hua, Jiaqiang Ma, Jiacheng Ge, Yong Liu, Zhongyue Zhang, Jack Xiaoyu Chen, <b>Ruofan Jin</b>, Yingrui Wang, Jian Zhou, Jia Fan, Zaixiang Zheng, Lei Bai, Haifeng Ye, Qi Liu, Guoji Guo, Zaixi Zhang, Siqi Sun, Tiannan Guo, Shuangjia Zheng, Qiang Gao",
-    venue: "Cancer Cell",
-    note: "2026 · 44(7): 1315–1320 · commentary",
-    href: "https://doi.org/10.1016/j.ccell.2026.06.002",
-  },
-  {
     title:
       "AttABseq: An Attention-based Deep Learning Prediction Method for Antigen-Antibody Binding Affinity Changes Based on Protein Sequences",
     authors:
       "<b>Ruofan Jin</b>, Qing Ye, Jike Wang, Zheng Cao, Dejun Jiang, Tianyue Wang, Yu Kang, Wanting Xu, Chang-Yu Hsieh*, Tingjun Hou*",
     venue: "Briefings in Bioinformatics",
-    note: "2024 · sole first author",
+    note: "2024 · sole first author · 46 citations",
     href: "https://doi.org/10.1093/bib/bbae304",
   },
   {
@@ -326,51 +318,30 @@ const PUBS_PUBLISHED = [
     authors: "<b>Ruofan Jin</b>, Ruhong Zhou*, Dong Zhang*",
     venue: "Journal of Zhejiang University-SCIENCE B",
     note: "cover article · sole first author",
+    href: "https://doi.org/10.1631/jzus.B2400387",
   },
   {
     title:
       "GeneBreaker: Jailbreak Attacks against DNA Language Models with Pathogenicity Guidance",
     authors: "<b>Ruofan Jin</b>*, Zhenghong Zhou, Zaixi Zhang, Le Cong, Mengdi Wang",
     venue: "NeurIPS 2025, BioSafeGenAI Workshop",
-    note: "Best Paper Award and Oral · co-first",
+    note: "Best Paper Award and Oral · co-first · 18 citations",
     badge: "Best Paper",
+    href: "https://arxiv.org/abs/2505.23839",
   },
   {
     title:
       "Systematic Biosafety Evaluation of DNA Language Models under Jailbreak Attacks",
     authors: "<b>Ruofan Jin</b>*, Zhenghong Zhou*, Zaixi Zhang, Le Cong, Mengdi Wang",
     venue: "ICLR 2026",
-    note: "co-first",
+    note: "co-first · 18 citations",
   },
   {
     title: "SafeProtein: Red-Teaming Framework and Benchmark for Protein Foundation Models",
     authors:
       "Jigang Fan*, Zhenghong Zhou*, <b>Ruofan Jin</b>*, Le Cong, Mengdi Wang, Zaixi Zhang",
     venue: "NeurIPS 2025",
-    note: "co-first",
-  },
-  {
-    title:
-      "Highly accurate and efficient deep learning paradigm for full-atom protein loop modeling with KarmaLoop",
-    authors:
-      "Tianyue Wang, Xunjun Zhang, Odin Zhang, et al., <b>Ruofan Jin</b>, … Chang-yu Hsieh*, Tingjun Hou*",
-    venue: "Research",
-    href: "https://doi.org/10.34133/research.0408",
-  },
-  {
-    title: "Molecular generation with reduced labeling through constraint architecture",
-    authors:
-      "Jike Wang, Yundian Zeng, Huiyong Sun, et al., <b>Ruofan Jin</b>, … Chang-Yu Hsieh*, Tingjun Hou*",
-    venue: "Journal of Chemical Information and Modeling",
-    href: "https://doi.org/10.1021/acs.jcim.3c00579",
-  },
-  {
-    title:
-      "Comprehensive assessment of protein loop modeling programs on large-scale datasets: prediction accuracy and efficiency",
-    authors:
-      "Tianyue Wang, Langcheng Wang, Xujun Zhang, et al., <b>Ruofan Jin</b>, … Yu Kang*, Tingjun Hou*",
-    venue: "Briefings in Bioinformatics",
-    href: "https://doi.org/10.1093/bib/bbad486",
+    note: "co-first · 10 citations",
   },
   {
     title:
@@ -378,7 +349,42 @@ const PUBS_PUBLISHED = [
     authors:
       "Maoqin Xia, Ying Liu, Jingjing Liu, et al., <b>Ruofan Jin</b>, … Jinping Si*, Yingxiong Qiu*",
     venue: "Molecular Phylogenetics and Evolution",
+    note: "89 citations",
     href: "https://doi.org/10.1016/j.ympev.2022.107431",
+  },
+  {
+    title:
+      "Comprehensive assessment of protein loop modeling programs on large-scale datasets: prediction accuracy and efficiency",
+    authors:
+      "Tianyue Wang, Langcheng Wang, Xujun Zhang, et al., <b>Ruofan Jin</b>, … Yu Kang*, Tingjun Hou*",
+    venue: "Briefings in Bioinformatics",
+    note: "20 citations",
+    href: "https://doi.org/10.1093/bib/bbad486",
+  },
+  {
+    title: "Molecular generation with reduced labeling through constraint architecture",
+    authors:
+      "Jike Wang, Yundian Zeng, Huiyong Sun, et al., <b>Ruofan Jin</b>, … Chang-Yu Hsieh*, Tingjun Hou*",
+    venue: "Journal of Chemical Information and Modeling",
+    note: "10 citations",
+    href: "https://doi.org/10.1021/acs.jcim.3c00579",
+  },
+  {
+    title:
+      "Highly accurate and efficient deep learning paradigm for full-atom protein loop modeling with KarmaLoop",
+    authors:
+      "Tianyue Wang, Xunjun Zhang, Odin Zhang, et al., <b>Ruofan Jin</b>, … Chang-yu Hsieh*, Tingjun Hou*",
+    venue: "Research",
+    note: "7 citations",
+    href: "https://doi.org/10.34133/research.0408",
+  },
+  {
+    title: "OpenIO: An open framework for AI-native immunotherapy",
+    authors:
+      "Yingcheng Wu, Hao Xiao, Nan Jiang, Will Hua, Jiaqiang Ma, Jiacheng Ge, Yong Liu, Zhongyue Zhang, Jack Xiaoyu Chen, <b>Ruofan Jin</b>, Yingrui Wang, Jian Zhou, Jia Fan, Zaixiang Zheng, Lei Bai, Haifeng Ye, Qi Liu, Guoji Guo, Zaixi Zhang, Siqi Sun, Tiannan Guo, Shuangjia Zheng, Qiang Gao",
+    venue: "Cancer Cell",
+    note: "2026 · 44(7): 1315–1320 · commentary · 1 citation",
+    href: "https://doi.org/10.1016/j.ccell.2026.06.002",
   },
 ];
 
